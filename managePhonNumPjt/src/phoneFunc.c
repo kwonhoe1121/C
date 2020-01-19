@@ -123,7 +123,7 @@ void DeletePhoneData(void)
 	//phoneData data;
 	//phoneData * pData;
 	char deleteName[NAME_LEN];
-	int i, j;
+	int i; 
 //	int nameCnt=0;
 //	int selectedNum=0;
 	int idxOfMatchingData[LIST_NUM]; //삭제 시킬 idx 주소값을 저장시켜놓는 배열
@@ -253,16 +253,17 @@ void StoreDataToFile(void){
 	int i;
 	int rc;
 
-	pWData = fopen("../file/phone-data-list", "w");
+	pWData = fopen("phone-data-list", "w");
 
 	if(!pWData) {
 		fputs("파일을 읽을 수 없습니다. \n", stdout);
-		//return -1;
+		return;
 	}
 
+	fwrite(&numOfData, sizeof(int), 1, pWData);
 	for(i=0; i<numOfData; i+=1){
-		fputs(phoneList[i]->name, pWData);
-		fputs(phoneList[i]->phoneNum, pWData);
+		fprintf(pWData, "%s\n%s\n", phoneList[i]->name, phoneList[i]->phoneNum);
+		free(phoneList[i]);
 	}
 
 	fclose(pWData);
@@ -276,25 +277,50 @@ void StoreDataToFile(void){
  */
 void LoadDataFromFile(void){
 	FILE * pRData = NULL;
-	int i;
-	int rc;
+	phoneData * pData = NULL;
+	int i, sLen;
 
-	pRData = fopen("../file/phone-data-list", "r");
+	pRData = fopen("phone-data-list", "r");
 
 	if(!pRData) {
 		fputs("파일을 읽을 수 없습니다. \n", stdout);
-		//return -1;
+		return;
 	}
 
-	for(i=0; i<numOfData; i+=1) {
-		if(feof(pRData) != -1) {
-			fgets(phoneList[i]->name, sizeof(NAME_LEN), pRData);
-			fgets(phoneList[i]->phoneNum, sizeof(PHONE_LEN), pRData);
-		}else{
-			break;
-		}
-	}
+//	for(i=0; i<numOfData; i+=1) {
+//		if(feof(pRData) != 0) {
+//			fgets(phoneList[i]->name, sizeof(NAME_LEN), pRData);
+//			fgets(phoneList[i]->phoneNum, sizeof(PHONE_LEN), pRData);
+//		}else{
+//			break;
+//		}
+//	}
+
+	//데이터 생성 시 메모리 동적 할당 해줘야 한다. 내가 삽질한 이유.. 
+//	while(feof(pRData) != EOF){
+//		pData = (phoneData*)malloc(sizeof(phoneData));
+//
+//		fgets(pData->name, NAME_LEN, pRData);
+//		
+//		fgets(pData->phoneNum, PHONE_LEN, pRData);
+//		phoneList[numOfData++] = pData;
+//
+//	}
 	
+	fread(&numOfData, sizeof(int), 1, pRData);
+
+	for(i=0; i<numOfData; i+=1){
+		phoneList[i]=(phoneData*)malloc(sizeof(phoneData));
+
+		fgets(phoneList[i]->name, NAME_LEN, pRData);
+		sLen = strlen(phoneList[i]->name);
+		phoneList[i]->name[sLen-1] = 0;
+
+		fgets(phoneList[i]->phoneNum, PHONE_LEN, pRData);
+		sLen = strlen(phoneList[i]->phoneNum);
+		phoneList[i]->phoneNum[sLen-1] = 0;
+	}	
+
 	fclose(pRData);
 }
 				

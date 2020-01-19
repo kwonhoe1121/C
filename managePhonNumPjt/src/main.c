@@ -19,6 +19,8 @@ enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};
 int main(void)
 {
     int inputMenu = 0;
+
+	LoadDataFromFile();
     
     while(1)
     {
