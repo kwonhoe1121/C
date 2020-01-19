@@ -5,9 +5,11 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
-DELETE	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+CHANGE	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon1	file:
+ChangePhoneData	src/phoneFunc.c	/^void ChangePhoneData(void)$/;"	f
+DELETE	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon1	file:
 DeletePhoneData	src/phoneFunc.c	/^void DeletePhoneData(void)$/;"	f
-INPUT	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+INPUT	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon1	file:
 InputPhoneData	src/phoneFunc.c	/^void InputPhoneData(void)$/;"	f
 LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIST_NUM	src/phoneFunc.c	/^#define LIST_NUM /;"	d	file:
@@ -16,11 +18,11 @@ NAME_LEN	src/phoneData.h	/^#define NAME_LEN /;"	d
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 PHONE_LEN	src/phoneData.h	/^#define PHONE_LEN /;"	d
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
-QUIT	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
-SEARCH	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
-SHOWALL	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+QUIT	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon1	file:
+SEARCH	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon1	file:
+SHOWALL	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon1	file:
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
-SearchPhoneData	src/phoneFunc.c	/^int SearchPhoneData(void)$/;"	f
+SearchPhoneData	src/phoneFunc.c	/^void SearchPhoneData(void)$/;"	f
 ShowAllData	src/phoneFunc.c	/^void ShowAllData(void)$/;"	f
 ShowMenu	src/screenOut.c	/^void ShowMenu(void)$/;"	f
 ShowPhoneInfoByPtr	src/screenOut.c	/^void ShowPhoneInfoByPtr(phoneData * pPhone)$/;"	f

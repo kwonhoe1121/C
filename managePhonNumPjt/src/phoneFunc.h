@@ -12,11 +12,13 @@
 void InputPhoneData(void);
 void ShowAllData(void);
 
-int SearchPhoneData(void);
+void SearchPhoneData(void);
 void DeletePhoneData(void);
+void ChangePhoneData(void);
 
 void StoreDataToFile(void);
 void LoadDataFromFile(void);
+
 
 #endif
 

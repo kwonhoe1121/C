@@ -44,11 +44,11 @@ void InputPhoneData(void)
     
 	//phoneList[numOfData] = (phoneData*)malloc(sizeof(phoneData)); 
     //phoneList[numOfData]=&data;
-	//memcpy(phoneList[numOfData]->name, data.name, sizeof(NAME_LEN));
-	//memcpy(phoneList[numOfData]->phoneNum, data.phoneNum, sizeof(PHONE_LEN));
+	//memcpy(phoneList[numOfData]->name, data.name, NAME_LEN);
+	//memcpy(phoneList[numOfData]->phoneNum, data.phoneNum, PHONE_LEN);
     //phoneList[numOfData]=&data;  //data는 지역 변수로 설정 되기 때문에 함수 호출이 끝나면 메로리가 사라짐. -> 힙 영역으로 메모리를 할당 받아야 한다. 일반 대입은 데이터 복사가 이뤄짐으로 데이터가 유지 될 수 있지만 주소 복사는 불가능하다!!!!!!! 중요!!
 	for(i=0; i<numOfData; i+=1) {
-		if(memcmp(pData->name, phoneList[i]->name, sizeof(NAME_LEN)) == 0 && memcmp(pData->phoneNum, phoneList[i]->phoneNum, sizeof(PHONE_LEN)) == 0){
+		if(memcmp(pData->name, phoneList[i]->name, NAME_LEN) == 0 && memcmp(pData->phoneNum, phoneList[i]->phoneNum, PHONE_LEN) == 0){
 			fputs("이미 입력된 데이터 입니다. ", stdout);
 			free(pData); //동적 할당된 메모리 해제
 			getchar();
@@ -81,12 +81,12 @@ void ShowAllData(void)
     getchar();
 }
 
-/* 함    수: int ShearchPhoneData(void)
+/* 함    수: void ShearchPhoneData(void)
  * 기    능: 저장된 데이터 검색. 
- * 반    환: int.
+ * 반    환: void
  *
  */
-int SearchPhoneData(void)
+void SearchPhoneData(void)
 {
 	//phoneData data;
 //	phoneData * pData;
@@ -98,19 +98,19 @@ int SearchPhoneData(void)
 	scanf("%s", searchName);
 	
 	for(i=0; i<numOfData; i+=1){
-		if(memcmp(searchName, phoneList[i]->name, sizeof(NAME_LEN)) == 0){
+		if(memcmp(searchName, phoneList[i]->name, NAME_LEN) == 0){
 			ShowPhoneInfoByPtr(phoneList[i]);
 			isName++;
 		}
 	}
 	
 	if(isName){
-		fputs("검색이 완료되었습니다.\n", stdout);
-		return isName;
+		puts("검색이 완료되었습니다.");
 	}else{
-		fputs("검색에 실패하였습니다.\n", stdout);	
-		return isName;
+		puts("검색에 실패하였습니다.");	
 	}
+	
+	getchar();
 }
 
 /* 함    수: void DeletePhoneData(void)
@@ -135,7 +135,7 @@ void DeletePhoneData(void)
 	scanf("%s", deleteName);
 //
 //	for(i=0; i<numOfData; i+=1){
-//		if(memcmp(pData.name, phoneList[i].name, sizeof(NAME_LEN)) == 0) {
+//		if(memcmp(pData.name, phoneList[i].name, NAME_LEN) == 0) {
 //			if(i != (numOfData-1)){
 //				for(j=i; j<numOfData; j+=1){
 //					phoneList[j]=phoneList[j+1];
@@ -150,7 +150,7 @@ void DeletePhoneData(void)
 //	}	
 //
 //	for(i=0; i<numOfData; i+=1){
-//		if(memcmp(data.name, phoneList[i]->name, sizeof(NAME_LEN)) == 0) {
+//		if(memcmp(data.name, phoneList[i]->name, NAME_LEN) == 0) {
 //			for(j=i; j<numOfData-1; j+=1){
 //				phoneList[j]=phoneList[j+1];
 //			}
@@ -161,7 +161,7 @@ void DeletePhoneData(void)
 //	}	
 
 //	for(i=0; i<numOfData; i+=1){ //동명이인이 있는지 먼저 확인한다.
-//		if(memcmp(deleteName, phoneList[i]->name, sizeof(NAME_LEN)) == 0) {
+//		if(memcmp(deleteName, phoneList[i]->name, NAME_LEN) == 0) {
 //			nameCnt++;
 //			if(nameCnt > 1) break;
 //		}
@@ -170,7 +170,7 @@ void DeletePhoneData(void)
 //	if(nameCnt > 1) { //동명이인이 존재할 경우
 //		nameCnt=0;
 //		for(i=0; i<numOfData; i+=1){
-//			if(memcmp(deleteName, phoneList[i]->name, sizeof(NAME_LEN)) == 0) {
+//			if(memcmp(deleteName, phoneList[i]->name, NAME_LEN) == 0) {
 //				printf("NUM. %d\n", ++nameCnt);
 //				ShowPhoneInfoByPtr(phoneList[i]);
 //			}
@@ -180,7 +180,7 @@ void DeletePhoneData(void)
 //		
 //		nameCnt=0;
 //		for(i=0; i<numOfData; i+=1) {
-//			if(memcmp(deleteName, phoneList[i]->name, sizeof(NAME_LEN)) == 0) {
+//			if(memcmp(deleteName, phoneList[i]->name, NAME_LEN) == 0) {
 //				nameCnt++;
 //				if(selectedNum == nameCnt) {
 //					free(phoneList[i]);
@@ -195,7 +195,7 @@ void DeletePhoneData(void)
 //		}
 //	}else{ 
 //		for(i=0; i<numOfData; i+=1){
-//			if(memcmp(deleteName, phoneList[i]->name, sizeof(NAME_LEN)) == 0) {
+//			if(memcmp(deleteName, phoneList[i]->name, NAME_LEN) == 0) {
 //				free(phoneList[i]);
 //				for(j=i; j<numOfData-1; j+=1){
 //					phoneList[j]=phoneList[j+1];
@@ -210,7 +210,7 @@ void DeletePhoneData(void)
 //	fputs("해당 이름은 존재하지 않습니다 \n", stdout);
 
 	for(i=0; i<numOfData; i+=1) {
-		if(memcmp(phoneList[i]->name, deleteName, sizeof(NAME_LEN))==0){
+		if(memcmp(phoneList[i]->name, deleteName, NAME_LEN)==0){
 			idxOfMatchingData[matchedCount++]=i;
 		}
 	}
@@ -251,7 +251,6 @@ void DeletePhoneData(void)
 void StoreDataToFile(void){
 	FILE *pWData = NULL;
 	int i;
-	int rc;
 
 	pWData = fopen("phone-data-list", "w");
 
@@ -262,7 +261,7 @@ void StoreDataToFile(void){
 
 	fwrite(&numOfData, sizeof(int), 1, pWData);
 	for(i=0; i<numOfData; i+=1){
-		fprintf(pWData, "%s\n%s\n", phoneList[i]->name, phoneList[i]->phoneNum);
+		fprintf(pWData, "%s\n%s\n", phoneList[i]->name, phoneList[i]->phoneNum); //fgets함수를 사용하려면, enter \n 값으로 문자열을 구분해줘야 한다. 
 		free(phoneList[i]);
 	}
 
@@ -277,7 +276,6 @@ void StoreDataToFile(void){
  */
 void LoadDataFromFile(void){
 	FILE * pRData = NULL;
-	phoneData * pData = NULL;
 	int i, sLen;
 
 	pRData = fopen("phone-data-list", "r");
@@ -289,8 +287,8 @@ void LoadDataFromFile(void){
 
 //	for(i=0; i<numOfData; i+=1) {
 //		if(feof(pRData) != 0) {
-//			fgets(phoneList[i]->name, sizeof(NAME_LEN), pRData);
-//			fgets(phoneList[i]->phoneNum, sizeof(PHONE_LEN), pRData);
+//			fgets(phoneList[i]->name, NAME_LEN, pRData);
+//			fgets(phoneList[i]->phoneNum, PHONE_LEN, pRData);
 //		}else{
 //			break;
 //		}
@@ -314,16 +312,67 @@ void LoadDataFromFile(void){
 
 		fgets(phoneList[i]->name, NAME_LEN, pRData);
 		sLen = strlen(phoneList[i]->name);
-		phoneList[i]->name[sLen-1] = 0;
+		phoneList[i]->name[sLen-1] = 0x00; //fgets함수는 문자열을 구분하는 Enter키의 입력까지도 데이터로 처리하므로 해당 \n은 널문자로 대체한다.
 
 		fgets(phoneList[i]->phoneNum, PHONE_LEN, pRData);
 		sLen = strlen(phoneList[i]->phoneNum);
-		phoneList[i]->phoneNum[sLen-1] = 0;
+		phoneList[i]->phoneNum[sLen-1] = 0x00;
 	}	
 
 	fclose(pRData);
 }
 				
+/* 함    수: void ChangePhoneData(void)
+ * 기    능: 전화번호 변경
+ * 반    환: void.
+ * */
+void ChangePhoneData(void)
+{
+	char changeName[NAME_LEN];
+	char changeNum[PHONE_LEN];
+	int idxOfMatchingData[LIST_NUM];
+	int matchedCount=0;
+	int chgIdx=0;
+	int selection;
+	int i;
+
+	fputs("변경 대상의 이름은? ", stdout);
+	scanf("%s", changeName);
+	getchar();
+
+	for(i=0; i<numOfData; i+=1){
+		if(memcmp(phoneList[i]->name, changeName, NAME_LEN)==0){
+			idxOfMatchingData[matchedCount++]=i;
+		}
+	}
+
+	if(matchedCount==0){
+		fputs("일치하는 이름이 없습니다.\n", stdout);
+		return;
+	}else if(matchedCount==1){
+		chgIdx=idxOfMatchingData[0];
+	}else{
+		for(i=0; i<matchedCount; i+=1){
+			printf("NUM. %d \n", i+1);
+			ShowPhoneInfoByPtr(phoneList[idxOfMatchingData[i]]);
+		}
+
+		fputs("선택: ", stdout);
+		scanf("%d", &selection);
+		getchar();
+		
+		chgIdx=idxOfMatchingData[selection-1];
+	}
+
+	fputs("변경할 전화번호는? ", stdout);
+	scanf("%s", changeNum);
+	getchar();
+
+	memset(phoneList[chgIdx]->phoneNum, 0x00, PHONE_LEN);
+	memcpy(phoneList[chgIdx]->phoneNum, changeNum, PHONE_LEN);
+
+}
+
 
 /* end of file */
  

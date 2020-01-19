@@ -9,7 +9,7 @@
 #include "screenOut.h"
 #include "phoneFunc.h"
 
-enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};
+enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};
 
 /* 함    수: int main (void)
  * 기    능: 사용자 선택 처리. 
@@ -24,6 +24,7 @@ int main(void)
     
     while(1)
     {
+		
         ShowMenu();
         fputs("선택하세요 : ", stdout);
         scanf("%d", &inputMenu);
@@ -39,6 +40,9 @@ int main(void)
 				break;
 			case SEARCH:
 				SearchPhoneData();
+				break;
+			case CHANGE:
+				ChangePhoneData();
 				break;
 			case DELETE:
 				DeletePhoneData();
