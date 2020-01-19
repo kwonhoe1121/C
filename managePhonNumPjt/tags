@@ -1,0 +1,69 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
+DELETE	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+DeletePhoneData	src/phoneFunc.c	/^void DeletePhoneData(void)$/;"	f
+INPUT	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+InputPhoneData	src/phoneFunc.c	/^void InputPhoneData(void)$/;"	f
+LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
+LIST_NUM	src/phoneFunc.c	/^#define LIST_NUM /;"	d	file:
+LoadDataFromFile	src/phoneFunc.c	/^void LoadDataFromFile(void){$/;"	f
+NAME_LEN	src/phoneData.h	/^#define NAME_LEN /;"	d
+NDEBUG	tests/minunit.h	/^#undef NDEBUG$/;"	d
+OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
+PHONE_LEN	src/phoneData.h	/^#define PHONE_LEN /;"	d
+PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
+QUIT	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+RUN_TESTS	tests/minunit.h	/^#define RUN_TESTS(/;"	d
+SEARCH	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+SHOWALL	src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+SearchPhoneData	src/phoneFunc.c	/^int SearchPhoneData(void)$/;"	f
+ShowAllData	src/phoneFunc.c	/^void ShowAllData(void)$/;"	f
+ShowMenu	src/screenOut.c	/^void ShowMenu(void)$/;"	f
+ShowPhoneInfoByPtr	src/screenOut.c	/^void ShowPhoneInfoByPtr(phoneData * pPhone)$/;"	f
+StoreDataToFile	src/phoneFunc.c	/^void StoreDataToFile(void){$/;"	f
+__COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
+__PHONEDATA_H__	src/phoneData.h	/^#define __PHONEDATA_H__$/;"	d
+__PHONEFUNC_H__	src/phoneFunc.h	/^#define __PHONEFUNC_H__$/;"	d
+__SCREENOUT_H__	src/screenOut.h	/^#define __SCREENOUT_H__$/;"	d
+__dbg_h__	src/dbg.h	/^#define __dbg_h__$/;"	d
+__phoneData	src/phoneData.h	/^typedef struct __phoneData $/;"	s
+_minunit_h	tests/minunit.h	/^#define _minunit_h$/;"	d
+all_tests	tests/libex29_tests.c	/^RUN_TESTS(all_tests);$/;"	v
+all_tests	tests/libex29_tests.c	/^char *all_tests()$/;"	f
+check	src/dbg.h	/^#define check(/;"	d
+check_debug	src/dbg.h	/^#define check_debug(/;"	d
+check_function	tests/libex29_tests.c	/^int check_function(const char *func_to_run, const char *data,$/;"	f
+check_mem	src/dbg.h	/^#define check_mem(/;"	d
+clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
+debug	src/dbg.h	/^#define debug(/;"	d
+fail_on_purpose	src/libex29.c	/^int fail_on_purpose(const char *msg)$/;"	f
+lib	tests/libex29_tests.c	/^void *lib = NULL;$/;"	v
+lib_file	tests/libex29_tests.c	/^char *lib_file = "build\/libYOUR_LIBRARY.so";$/;"	v
+lib_function	tests/libex29_tests.c	/^typedef int (*lib_function) (const char *data);$/;"	t	file:
+log_err	src/dbg.h	/^#define log_err(/;"	d
+log_info	src/dbg.h	/^#define log_info(/;"	d
+log_warn	src/dbg.h	/^#define log_warn(/;"	d
+lowercase	src/libex29.c	/^int lowercase(const char *msg)$/;"	f
+main	src/main.c	/^int main(void)$/;"	f
+mu_assert	tests/minunit.h	/^#define mu_assert(/;"	d
+mu_run_test	tests/minunit.h	/^#define mu_run_test(/;"	d
+mu_suite_start	tests/minunit.h	/^#define mu_suite_start(/;"	d
+name	src/phoneData.h	/^    char name[NAME_LEN];$/;"	m	struct:__phoneData
+numOfData	src/phoneFunc.c	/^int numOfData=0;$/;"	v
+phoneData	src/phoneData.h	/^} phoneData;$/;"	t	typeref:struct:__phoneData
+phoneList	src/phoneFunc.c	/^phoneData * phoneList[LIST_NUM]; \/\/구조체 포인터 배열 선언$/;"	v
+phoneNum	src/phoneData.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__phoneData
+print_a_message	src/libex29.c	/^int print_a_message(const char *msg)$/;"	f
+sentinel	src/dbg.h	/^#define sentinel(/;"	d
+test_dlclose	tests/libex29_tests.c	/^char *test_dlclose()$/;"	f
+test_dlopen	tests/libex29_tests.c	/^char *test_dlopen()$/;"	f
+test_failures	tests/libex29_tests.c	/^char *test_failures()$/;"	f
+test_functions	tests/libex29_tests.c	/^char *test_functions()$/;"	f
+tests_run	tests/minunit.h	/^int tests_run;$/;"	v
+uppercase	src/libex29.c	/^int uppercase(const char *msg)$/;"	f

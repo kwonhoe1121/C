@@ -1,0 +1,47 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DELETE	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+DeletePhoneData	phoneFunc.c	/^void DeletePhoneData(void)$/;"	f
+INPUT	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+InputPhoneData	phoneFunc.c	/^void InputPhoneData(void)$/;"	f
+LIST_NUM	phoneFunc.c	/^#define LIST_NUM /;"	d	file:
+LoadDataFromFile	phoneFunc.c	/^void LoadDataFromFile(void){$/;"	f
+NAME_LEN	phoneData.h	/^#define NAME_LEN /;"	d
+PHONE_LEN	phoneData.h	/^#define PHONE_LEN /;"	d
+QUIT	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+SEARCH	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+SHOWALL	main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, QUIT};$/;"	e	enum:__anon1	file:
+SearchPhoneData	phoneFunc.c	/^int SearchPhoneData(void)$/;"	f
+ShowAllData	phoneFunc.c	/^void ShowAllData(void)$/;"	f
+ShowMenu	screenOut.c	/^void ShowMenu(void)$/;"	f
+ShowPhoneInfoByPtr	screenOut.c	/^void ShowPhoneInfoByPtr(phoneData * pPhone)$/;"	f
+StoreDataToFile	phoneFunc.c	/^void StoreDataToFile(void){$/;"	f
+__COMMOM_H__	common.h	/^#define __COMMOM_H__$/;"	d
+__PHONEDATA_H__	phoneData.h	/^#define __PHONEDATA_H__$/;"	d
+__PHONEFUNC_H__	phoneFunc.h	/^#define __PHONEFUNC_H__$/;"	d
+__SCREENOUT_H__	screenOut.h	/^#define __SCREENOUT_H__$/;"	d
+__dbg_h__	dbg.h	/^#define __dbg_h__$/;"	d
+__phoneData	phoneData.h	/^typedef struct __phoneData $/;"	s
+check	dbg.h	/^#define check(/;"	d
+check_debug	dbg.h	/^#define check_debug(/;"	d
+check_mem	dbg.h	/^#define check_mem(/;"	d
+clean_errno	dbg.h	/^#define clean_errno(/;"	d
+debug	dbg.h	/^#define debug(/;"	d
+fail_on_purpose	libex29.c	/^int fail_on_purpose(const char *msg)$/;"	f
+log_err	dbg.h	/^#define log_err(/;"	d
+log_info	dbg.h	/^#define log_info(/;"	d
+log_warn	dbg.h	/^#define log_warn(/;"	d
+lowercase	libex29.c	/^int lowercase(const char *msg)$/;"	f
+main	main.c	/^int main(void)$/;"	f
+name	phoneData.h	/^    char name[NAME_LEN];$/;"	m	struct:__phoneData
+numOfData	phoneFunc.c	/^int numOfData=0;$/;"	v
+phoneData	phoneData.h	/^} phoneData;$/;"	t	typeref:struct:__phoneData
+phoneList	phoneFunc.c	/^phoneData * phoneList[LIST_NUM]; \/\/구조체 포인터 배열 선언$/;"	v
+phoneNum	phoneData.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__phoneData
+print_a_message	libex29.c	/^int print_a_message(const char *msg)$/;"	f
+sentinel	dbg.h	/^#define sentinel(/;"	d
+uppercase	libex29.c	/^int uppercase(const char *msg)$/;"	f
