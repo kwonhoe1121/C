@@ -92,15 +92,16 @@ void SearchPhoneData(void)
 //	phoneData * pData;
 	char searchName[NAME_LEN];
 	int i;
-	int isName=0; //검색된 이름 개수 반환한다. 
+	int isName=0; 
 
 	fputs("찾는 이름은? ", stdout);
 	scanf("%s", searchName);
 	
 	for(i=0; i<numOfData; i+=1){
-		if(memcmp(searchName, phoneList[i]->name, NAME_LEN) == 0){
+		//if(memcmp(searchName, phoneList[i]->name, NAME_LEN) == 0){
+		if(strcmp(searchName, phoneList[i]->name) == 0){
 			ShowPhoneInfoByPtr(phoneList[i]);
-			isName++;
+			isName=1;
 		}
 	}
 	

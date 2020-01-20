@@ -15,7 +15,7 @@
  */
 void ShowMenu(void)
 {
-    //system("clear");   //stdlib.h
+    system("clear");   //stdlib.h
     
     printf("━━━━━ 메  뉴 ━━━━━━━ \n");
     printf(" 1. 전화번호 입력 \n");
