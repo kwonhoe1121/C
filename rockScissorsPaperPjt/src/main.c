@@ -23,12 +23,28 @@ int main(void)
     puts("★★★★★★ 결과! ★★★★★★!!");
     WhoIsWinner(com, you);
     
-    printf("▷ 컴퓨터의 선택은 %d \n", com);
+//	if(com==SCISSORS)
+//        puts("▷ 컴퓨터의 선택은 가위. ");
+//    else if(com==ROCK)
+//        puts("▷ 컴퓨터의 선택은 바위. ");
+//    else
+//        puts("▷ 컴퓨터의 선택은 보. ");
+    fputs("▷ 컴퓨터의 선택은 ", stdout);
+    ShowRSP(com);
     
-    if(you==EVEN)
-        puts("▷ 당신의 선택은 짝수. ");
-    else
-        puts("▷ 당신의 선택은 홀수. ");
+//    if(you==EVEN)
+//        puts("▷ 당신의 선택은 짝수. ");
+//    else
+//        puts("▷ 당신의 선택은 홀수. ");
+
+//	if(you==SCISSORS)
+//        puts("▷ 당신의 선택은 가위. ");
+//    else if(you==ROCK)
+//        puts("▷ 당신의 선택은 바위. ");
+//    else
+//        puts("▷ 당신의 선택은 보. ");
+    fputs("▷ 당신의 선택은 ", stdout);
+    ShowRSP(you);
 
     puts("");
     return 0;
