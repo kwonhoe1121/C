@@ -15,6 +15,11 @@
  */
 int ChoiceOfCom(void) 
 {
+    //srand(time(NULL));  //seed 값 매번 다른 시간값으로 동적 생성.
+    srand((unsigned int)time(NULL));  //seed 값 매번 다른 시간값으로 동적 생성.
+
+    return rand()%100; // 0~99 범위 설정.
+
 }
 
 /* 함    수: int ChoiceOfMe(void).
@@ -24,6 +29,16 @@ int ChoiceOfCom(void)
  */
 int ChoiceOfMe(void)
 {
+    int usrChoice;
+
+    fputs("홀수이면 1, 짝수이면 2를 입력: ", stdout);
+
+    while(1)
+    {
+        scanf("%d", &usrChoice);
+        if(usrChoice == 1 || usrChoice == 2) 
+            return usrChoice;
+    }
 }
 
 /* 함    수: void WhoIsWinner(int com, int you)
@@ -33,6 +48,23 @@ int ChoiceOfMe(void)
  */
 void WhoIsWinner(int com, int you)
 {
+//    if(you == EVEN){
+//        if(com % 2 == 0){
+//            fputs("당신이 승자입니다!\n", stdout);
+//        }else{
+//            fputs("컴퓨터가 승자이군요!\n", stdout);
+//        }
+//    }else{
+//        if(com % 2 == 0){
+//            fputs("컴퓨터가 승자이군요!\n", stdout);
+//        }else{
+//            fputs("당신이 승자입니다!\n", stdout);
+//        }
+//    }
+    if((com % 2) == (you % 2))
+        fputs("당신이 승자입니다! \n", stdout);
+    else
+        fputs("컴퓨터가 승자이군요! \n", stdout);
 }
 
 /* end of file */
