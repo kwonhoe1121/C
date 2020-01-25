@@ -1,5 +1,5 @@
 /* Name: main.c  ver 1.0
- * Content: °ÔÀÓ main ÇÔ¼ö.
+ * Content: ê²Œì„ main í•¨ìˆ˜.
  * Implementation: YSW
  * 
  * Last modified 2008/01/01
@@ -12,23 +12,23 @@ int main(void)
 {
     int com;
     int you;
-    puts("ÀÚ! °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
+    puts("ì! ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤.");
     puts("");
     
-    puts("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù ´ë°á! ¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù!!");
+    puts("â˜†â˜†â˜†â˜†â˜†â˜† ëŒ€ê²°! â˜†â˜†â˜†â˜†â˜†â˜†!!");
     com=ChoiceOfCom();
     you=ChoiceOfMe();
     puts("");
    
-    puts("¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú °á°ú! ¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú!!");
+    puts("â˜…â˜…â˜…â˜…â˜…â˜… ê²°ê³¼! â˜…â˜…â˜…â˜…â˜…â˜…!!");
     WhoIsWinner(com, you);
     
-    printf("¢¹ ÄÄÇ»ÅÍÀÇ ¼±ÅÃÀº %d \n", com);
+    printf("â–· ì»´í“¨í„°ì˜ ì„ íƒì€ %d \n", com);
     
     if(you==EVEN)
-        puts("¢¹ ´ç½ÅÀÇ ¼±ÅÃÀº Â¦¼ö. ");
+        puts("â–· ë‹¹ì‹ ì˜ ì„ íƒì€ ì§ìˆ˜. ");
     else
-        puts("¢¹ ´ç½ÅÀÇ ¼±ÅÃÀº È¦¼ö. ");
+        puts("â–· ë‹¹ì‹ ì˜ ì„ íƒì€ í™€ìˆ˜. ");
 
     puts("");
     return 0;

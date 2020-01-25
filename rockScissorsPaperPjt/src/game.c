@@ -1,5 +1,5 @@
 /* Name: game.c  ver 1.0
- * Content: °ÔÀÓ °ü·Ã ÇÔ¼ö Á¤ÀÇ.
+ * Content: ê²Œì„ ê´€ë ¨ í•¨ìˆ˜ ì •ì˜.
  * Implementation: YSW
  * 
  * Last modified 2008/01/01
@@ -8,27 +8,27 @@
 #include "common.h"
 #include "game.h"
 
-/* ÇÔ    ¼ö: int ChoiceOfCom(void).
- * ±â    ´É: ¹«ÀÛÀ§ °ªÀ» ¹İÈ¯.
- * ¹İ    È¯: 0~99ÀÇ ¹üÀ§¿¡ ÀÖ´Â °ªÀ» ¹İÈ¯.
+/* í•¨    ìˆ˜: int ChoiceOfCom(void).
+ * ê¸°    ëŠ¥: ë¬´ì‘ìœ„ ê°’ì„ ë°˜í™˜.
+ * ë°˜    í™˜: 0~99ì˜ ë²”ìœ„ì— ìˆëŠ” ê°’ì„ ë°˜í™˜.
  *
  */
 int ChoiceOfCom(void) 
 {
 }
 
-/* ÇÔ    ¼ö: int ChoiceOfMe(void).
- * ±â    ´É: »ç¿ëÀÚÀÇ ¼±ÅÃÀ» ÀÔ·Â¹ŞÀ½.
- * ¹İ    È¯: »ç¿ëÀÚ ÀÔ·Â.
+/* í•¨    ìˆ˜: int ChoiceOfMe(void).
+ * ê¸°    ëŠ¥: ì‚¬ìš©ìì˜ ì„ íƒì„ ì…ë ¥ë°›ìŒ.
+ * ë°˜    í™˜: ì‚¬ìš©ì ì…ë ¥.
  *
  */
 int ChoiceOfMe(void)
 {
 }
 
-/* ÇÔ    ¼ö: void WhoIsWinner(int com, int you)
- * ±â    ´É: ½ÂÀÚ¸¦ °¡¸². 
- * ¹İ    È¯: void
+/* í•¨    ìˆ˜: void WhoIsWinner(int com, int you)
+ * ê¸°    ëŠ¥: ìŠ¹ìë¥¼ ê°€ë¦¼. 
+ * ë°˜    í™˜: void
  *
  */
 void WhoIsWinner(int com, int you)

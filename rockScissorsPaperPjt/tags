@@ -5,10 +5,17 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
+ChoiceOfCom	src/game.c	/^int ChoiceOfCom(void) $/;"	f
+ChoiceOfMe	src/game.c	/^int ChoiceOfMe(void)$/;"	f
+EVEN	src/game.h	/^enum {ODD=1, EVEN};$/;"	e	enum:__anon1
 LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
+ODD	src/game.h	/^enum {ODD=1, EVEN};$/;"	e	enum:__anon1
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+WhoIsWinner	src/game.c	/^void WhoIsWinner(int com, int you)$/;"	f
+__COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
+__GAME_H__	src/game.h	/^#define __GAME_H__$/;"	d
 __dbg_h__	src/dbg.h	/^#define __dbg_h__$/;"	d
 check	src/dbg.h	/^#define check(/;"	d
 check_debug	src/dbg.h	/^#define check_debug(/;"	d
@@ -18,4 +25,5 @@ debug	src/dbg.h	/^#define debug(/;"	d
 log_err	src/dbg.h	/^#define log_err(/;"	d
 log_info	src/dbg.h	/^#define log_info(/;"	d
 log_warn	src/dbg.h	/^#define log_warn(/;"	d
+main	src/main.c	/^int main(void)$/;"	f
 sentinel	src/dbg.h	/^#define sentinel(/;"	d
