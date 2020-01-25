@@ -19,6 +19,8 @@ void ChangePhoneData(void);
 void StoreDataToFile(void);
 void LoadDataFromFile(void);
 
+void StoreDataToFileInStruct(void);
+void LoadDataFromFileInStruct(void);
 
 #endif
 

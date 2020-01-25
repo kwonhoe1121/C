@@ -14,6 +14,7 @@ InputPhoneData	src/phoneFunc.c	/^void InputPhoneData(void)$/;"	f
 LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIST_NUM	src/phoneFunc.c	/^#define LIST_NUM /;"	d	file:
 LoadDataFromFile	src/phoneFunc.c	/^void LoadDataFromFile(void){$/;"	f
+LoadDataFromFileInStruct	src/phoneFunc.c	/^void LoadDataFromFileInStruct(void)$/;"	f
 NAME_LEN	src/phoneData.h	/^#define NAME_LEN /;"	d
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 PHONE_LEN	src/phoneData.h	/^#define PHONE_LEN /;"	d
@@ -27,6 +28,7 @@ ShowAllData	src/phoneFunc.c	/^void ShowAllData(void)$/;"	f
 ShowMenu	src/screenOut.c	/^void ShowMenu(void)$/;"	f
 ShowPhoneInfoByPtr	src/screenOut.c	/^void ShowPhoneInfoByPtr(phoneData * pPhone)$/;"	f
 StoreDataToFile	src/phoneFunc.c	/^void StoreDataToFile(void){$/;"	f
+StoreDataToFileInStruct	src/phoneFunc.c	/^void StoreDataToFileInStruct(void)$/;"	f
 __COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
 __PHONEDATA_H__	src/phoneData.h	/^#define __PHONEDATA_H__$/;"	d
 __PHONEFUNC_H__	src/phoneFunc.h	/^#define __PHONEFUNC_H__$/;"	d

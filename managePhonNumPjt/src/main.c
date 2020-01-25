@@ -20,7 +20,7 @@ int main(void)
 {
     int inputMenu = 0;
 
-	LoadDataFromFile();
+	LoadDataFromFileInStruct();
     
     while(1)
     {
@@ -51,7 +51,7 @@ int main(void)
         
         if(inputMenu==QUIT)
        {
-			StoreDataToFile();
+			StoreDataToFileInStruct();
             puts("이용해 주셔서 고마워요~");
             break;
         }

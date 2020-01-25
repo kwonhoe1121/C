@@ -8,12 +8,13 @@
 #include "common.h"
 #include "phoneData.h"
 #include "screenOut.h"
+#include "phoneFunc.h" /* 구조체 I/O 함수 정의 후 추가 */
 
 #define LIST_NUM   100
 
 int numOfData=0;
 //phoneData phoneList[LIST_NUM];  //구조체 배열 선언
-phoneData * phoneList[LIST_NUM]; //구조체 포인터 배열 선언
+phoneData * phoneList[LIST_NUM]; //구조체 포인터 배열 선언, 이 배열이 가지고 있는 타입이 포인터라는 의미이다.
 
 /* 함    수: void InputPhoneData(void)
  * 기    능: 전화번호 관련 데이터 입력 받아서 저장. 
@@ -39,7 +40,7 @@ void InputPhoneData(void)
     //gets(data.name);
     
     fputs("전화번호 입력: ", stdout);
-   gets(pData->phoneNum);
+    gets(pData->phoneNum);
     //gets(data.phoneNum);
     
 	//phoneList[numOfData] = (phoneData*)malloc(sizeof(phoneData)); 
@@ -59,8 +60,11 @@ void InputPhoneData(void)
 	phoneList[numOfData] = pData;
     numOfData++;
     
+	StoreDataToFileInStruct();
+
     puts("입력이 완료되었습니다.");
     getchar();
+
 }
 
 /* 함    수: void ShowAllData(void)
@@ -240,8 +244,12 @@ void DeletePhoneData(void)
 		phoneList[i]=phoneList[i+1];
 	}
 	numOfData-=1;
+
+    StoreDataToFileInStruct();
+
 	puts("삭제가 완료되었습니다.");
 	getchar();
+
 }
 
 /* 함    수: void StoreDataToFile(void);
@@ -372,7 +380,84 @@ void ChangePhoneData(void)
 	memset(phoneList[chgIdx]->phoneNum, 0x00, PHONE_LEN);
 	memcpy(phoneList[chgIdx]->phoneNum, changeNum, PHONE_LEN);
 
+	StoreDataToFileInStruct();
+
 }
+
+/* 함    수: void StoreDataToFileInStruct(void)
+ * 기    능: 파일 구조체 변수 단위로 저장
+ * 반    환: void.
+ * */
+void StoreDataToFileInStruct(void)
+{
+   	FILE *pWData = NULL;
+	int i;
+
+	pWData = fopen("phone-data-list", "wb"); //구조체 변수 저장 시 바이너리 파일로 저장한다.
+
+	if(!pWData) {
+		fputs("파일을 읽을 수 없습니다. \n", stdout);
+		return;
+	}
+
+	fwrite(&numOfData, sizeof(int), 1, pWData);
+	for(i=0; i<numOfData; i+=1){
+        fwrite(phoneList[i], sizeof(phoneData), 1, pWData); //fwrite 함수는 구조체 변수 하나를 통째로 write할 수 있다.
+		//free(phoneList[i]); // 구조체 write시 자동으로 동적 할당 시켜준다?
+	}
+
+	fclose(pWData);
+}
+
+
+/* 함    수: void LoadDataFromFileInStruct(void)
+ * 기    능: 파일 구조체 변수 단위로 불러오기
+ * 반    환: void.
+ * */
+void LoadDataFromFileInStruct(void)
+{
+	FILE * pRData = NULL;
+	int i;
+
+	pRData = fopen("phone-data-list", "rb"); //구조체 변수 저장 시 바이너리 파일로 저장한다.
+
+	if(!pRData) {
+		fputs("파일을 읽을 수 없습니다. \n", stdout);
+		return;
+	}
+
+//	for(i=0; i<numOfData; i+=1) {
+//		if(feof(pRData) != 0) {
+//			fgets(phoneList[i]->name, NAME_LEN, pRData);
+//			fgets(phoneList[i]->phoneNum, PHONE_LEN, pRData);
+//		}else{
+//			break;
+//		}
+//	}
+
+	//데이터 생성 시 메모리 동적 할당 해줘야 한다. 내가 삽질한 이유.. 
+//	while(feof(pRData) != EOF){
+//		pData = (phoneData*)malloc(sizeof(phoneData));
+//
+//		fgets(pData->name, NAME_LEN, pRData);
+//		
+//		fgets(pData->phoneNum, PHONE_LEN, pRData);
+//		phoneList[numOfData++] = pData;
+//
+//	}
+	
+	fread(&numOfData, sizeof(int), 1, pRData);
+
+	for(i=0; i<numOfData; i+=1){
+		phoneList[i]=(phoneData*)malloc(sizeof(phoneData));
+
+        fread(phoneList[i], sizeof(phoneData), 1, pRData);
+	}	
+
+	fclose(pRData);
+
+}
+
 
 
 /* end of file */
