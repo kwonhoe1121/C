@@ -1,0 +1,21 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
+LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
+OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
+PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
+SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+__dbg_h__	src/dbg.h	/^#define __dbg_h__$/;"	d
+check	src/dbg.h	/^#define check(/;"	d
+check_debug	src/dbg.h	/^#define check_debug(/;"	d
+check_mem	src/dbg.h	/^#define check_mem(/;"	d
+clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
+debug	src/dbg.h	/^#define debug(/;"	d
+log_err	src/dbg.h	/^#define log_err(/;"	d
+log_info	src/dbg.h	/^#define log_info(/;"	d
+log_warn	src/dbg.h	/^#define log_warn(/;"	d
+sentinel	src/dbg.h	/^#define sentinel(/;"	d
