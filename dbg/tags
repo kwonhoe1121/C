@@ -1,0 +1,66 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CFLAGS	ex19/Makefile	/^CFLAGS=-Wall -g$/;"	m
+CFLAGS	ex20/Makefile	/^CFLAGS=-Wall -g$/;"	m
+RC_ERR	dbg.h	/^#define RC_ERR /;"	d
+RC_NRM	dbg.h	/^#define RC_NRM /;"	d
+__dbg_h__	dbg.h	/^#define __dbg_h__$/;"	d
+__dbg_h__	ex19/dbg.h	/^#define __dbg_h__$/;"	d
+__dbg_h__	ex20/dbg.h	/^#define __dbg_h__$/;"	d
+bubble_sort	ex20/ex20.c	/^int *bubble_sort(int *numbers, int count, compare_cb cmp)$/;"	f
+bubble_sort	ex20/ex20_obo.c	/^int *bubble_sort(int *numbers, int count, compare_cb cmp)$/;"	f
+check	dbg.h	/^#define check(/;"	d
+check	ex19/dbg.h	/^#define check(/;"	d
+check	ex20/dbg.h	/^#define check(/;"	d
+check_debug	dbg.h	/^#define check_debug(/;"	d
+check_debug	ex19/dbg.h	/^#define check_debug(/;"	d
+check_debug	ex20/dbg.h	/^#define check_debug(/;"	d
+check_mem	dbg.h	/^#define check_mem(/;"	d
+check_mem	ex19/dbg.h	/^#define check_mem(/;"	d
+check_mem	ex20/dbg.h	/^#define check_mem(/;"	d
+clean_errno	dbg.h	/^#define clean_errno(/;"	d
+clean_errno	ex19/dbg.h	/^#define clean_errno(/;"	d
+clean_errno	ex20/dbg.h	/^#define clean_errno(/;"	d
+compare_cb	ex20/ex20.c	/^typedef int (*compare_cb) (int a, int b);$/;"	t	file:
+compare_cb	ex20/ex20_obo.c	/^typedef int (*compare_cb) (int a, int b);$/;"	t	file:
+debug	dbg.h	/^#define debug(/;"	d
+debug	ex19/dbg.h	/^#define debug(/;"	d
+debug	ex20/dbg.h	/^#define debug(/;"	d
+die	ex20/ex20.c	/^void die(const char *message)$/;"	f
+die	ex20/ex20_obo.c	/^void die(const char *message)$/;"	f
+dump	ex20/ex20.c	/^void dump(compare_cb cmp)$/;"	f
+log_err	dbg.h	/^#define log_err(/;"	d
+log_err	ex19/dbg.h	/^#define log_err(/;"	d
+log_err	ex20/dbg.h	/^#define log_err(/;"	d
+log_info	dbg.h	/^#define log_info(/;"	d
+log_info	ex19/dbg.h	/^#define log_info(/;"	d
+log_info	ex20/dbg.h	/^#define log_info(/;"	d
+log_warn	dbg.h	/^#define log_warn(/;"	d
+log_warn	ex19/dbg.h	/^#define log_warn(/;"	d
+log_warn	ex20/dbg.h	/^#define log_warn(/;"	d
+main	ex19/ex19.c	/^int main(int argc, char *argv[])$/;"	f
+main	ex20/ex20.c	/^int main(int argc, char *argv[])$/;"	f
+main	ex20/ex20_obo.c	/^int main(int argc, char *argv[])$/;"	f
+reverse_order	ex20/ex20.c	/^int reverse_order(int a, int b)$/;"	f
+reverse_order	ex20/ex20_obo.c	/^int reverse_order(int a, int b)$/;"	f
+sentinel	dbg.h	/^#define sentinel(/;"	d
+sentinel	ex19/dbg.h	/^#define sentinel(/;"	d
+sentinel	ex20/dbg.h	/^#define sentinel(/;"	d
+sorted_order	ex20/ex20.c	/^int sorted_order(int a, int b)$/;"	f
+sorted_order	ex20/ex20_obo.c	/^int sorted_order(int a, int b)$/;"	f
+strange_order	ex20/ex20.c	/^int strange_order(int a, int b)$/;"	f
+strange_order	ex20/ex20_obo.c	/^int strange_order(int a, int b)$/;"	f
+test_check	ex19/ex19.c	/^int test_check(char *file_name)$/;"	f
+test_check_debug	ex19/ex19.c	/^int test_check_debug()$/;"	f
+test_check_mem	ex19/ex19.c	/^int test_check_mem()$/;"	f
+test_debug	ex19/ex19.c	/^void test_debug()$/;"	f
+test_log_err	ex19/ex19.c	/^void test_log_err()$/;"	f
+test_log_info	ex19/ex19.c	/^void test_log_info()$/;"	f
+test_log_warn	ex19/ex19.c	/^void test_log_warn()$/;"	f
+test_sentinel	ex19/ex19.c	/^int test_sentinel(int code)$/;"	f
+test_sorting	ex20/ex20.c	/^void test_sorting(int *numbers, int count, compare_cb cmp)$/;"	f
+test_sorting	ex20/ex20_obo.c	/^void test_sorting(int *numbers, int count, compare_cb cmp)$/;"	f

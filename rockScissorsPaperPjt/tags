@@ -7,12 +7,14 @@
 CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 ChoiceOfCom	src/game.c	/^int ChoiceOfCom(void) $/;"	f
 ChoiceOfMe	src/game.c	/^int ChoiceOfMe(void)$/;"	f
-EVEN	src/game.h	/^enum {ODD=1, EVEN};$/;"	e	enum:__anon1
 LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
-ODD	src/game.h	/^enum {ODD=1, EVEN};$/;"	e	enum:__anon1
+PAPER	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
+ROCK	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
+SCISSORS	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+ShowRSP	src/game.c	/^void ShowRSP(int rsp)$/;"	f
 WhoIsWinner	src/game.c	/^void WhoIsWinner(int com, int you)$/;"	f
 __COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
 __GAME_H__	src/game.h	/^#define __GAME_H__$/;"	d
