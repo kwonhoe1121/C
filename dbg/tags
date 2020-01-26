@@ -4,10 +4,15 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CFLAGS	ex19/Makefile	/^CFLAGS=-Wall -g$/;"	m
 CFLAGS	ex20/Makefile	/^CFLAGS=-Wall -g$/;"	m
+LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
+OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
+PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
 RC_ERR	dbg.h	/^#define RC_ERR /;"	d
 RC_NRM	dbg.h	/^#define RC_NRM /;"	d
+SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 __dbg_h__	dbg.h	/^#define __dbg_h__$/;"	d
 __dbg_h__	ex19/dbg.h	/^#define __dbg_h__$/;"	d
 __dbg_h__	ex20/dbg.h	/^#define __dbg_h__$/;"	d

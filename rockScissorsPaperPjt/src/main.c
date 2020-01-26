@@ -8,6 +8,7 @@
 #include "common.h"
 #include "game.h"
 #include "gameTimes.h"
+#include "gameMoney.h"
 
 int main(void)
 {
@@ -57,6 +58,11 @@ int main(void)
 		ShowRSP(you);
 
         printf("승률: %d %% \n", rtnOdds());
+        printf("게이머 머니: %d  \n", getUsrMoney());
+        printf("컴퓨터 머니: %d  \n", getComMoney());
+
+        if(getUsrMoney() == 0 || getComMoney() == 0) break;
+
         puts("");
 
     }

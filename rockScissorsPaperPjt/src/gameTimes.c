@@ -8,6 +8,7 @@
 #include "common.h"
 #include "game.h"
 #include "gameTimes.h"
+#include "gameMoney.h"
 
 static int win = 0;  //static 변수는 외부 파일에서 접근 불가.
 static int lose = 0;
@@ -20,9 +21,20 @@ static int draw = 0;
  */
 void recodeRst(int rst) 
 {
-    if(rst == WIN) win++;
-    if(rst == LOSE) lose++;
-    if(rst == DRAW) draw++;
+    if(rst == WIN) {
+        win++; 
+        return;
+    }
+
+    if(rst == LOSE) {
+        lose++; 
+        return;
+    }
+
+    if(rst == DRAW) {
+        draw++; 
+        return;
+    }
 }
 
 /* 함    수: int rtnOdds(void).
@@ -32,7 +44,11 @@ void recodeRst(int rst)
  */
 int rtnOdds(void) 
 {
-    return (double)win/(win+lose+draw)*100;
+    //return (double)(win/(win+lose+draw))*100;
+    debug("win %d", win);
+    debug("lose %d", lose);
+    debug("draw %d", draw);
+    return (win*100)/(win+lose+draw);
 }
 
 /* 함    수: void showRst(void).

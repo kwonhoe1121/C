@@ -8,6 +8,7 @@
 #include "common.h"
 #include "game.h"
 #include "gameTimes.h"
+#include "gameMoney.h"
 
 /* 함    수: int ChoiceOfCom(void).
  * 기    능: 무작위 값을 반환.
@@ -100,16 +101,20 @@ void WhoIsWinner(int com, int you)
         case 0:
             fputs("비겼습니다. \n", stdout);
             recodeRst(DRAW);
+            //calMoney(DRAW);
             return;
 
         case 1: case -2: //유저가 이기는 경우만 선택한다.
             fputs("당신이 승자입니다.\n", stdout);
             recodeRst(WIN);
+            //calMoney(WIN);
+            setUsrWinRstMoney();
             return;
     }
-
-    fputs("컴퓨터가 승자입니다.\n", stdout); //유저가 이기는 경우를 제외하면 모두 컴퓨터가 승자인 경우만 남는다.
     recodeRst(LOSE);
+    //calMoney(LOSE);
+    setComWinRstMoney();
+    fputs("컴퓨터가 승자입니다.\n", stdout); //유저가 이기는 경우를 제외하면 모두 컴퓨터가 승자인 경우만 남는다.
 }
 
 /* 함    수: void ShowRSP(int rsp)
