@@ -9,7 +9,7 @@
 #define __GAME_H__
 
 //enum {ODD=1, EVEN};
-enum {SCISSORS=1, ROCK, PAPER};
+enum {SCISSORS=1, ROCK, PAPER, EXIT};
 
 int ChoiceOfCom(void);
 int ChoiceOfMe(void);

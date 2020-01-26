@@ -1,12 +1,13 @@
 /* Name: game.c  ver 1.0
  * Content: 게임 관련 함수 정의.
- * Implementation: YSW
+ * Implementation: KJJ
  * 
- * Last modified 2008/01/01
+ * Last modified 2020/01/26
  */
 #include <time.h>
 #include "common.h"
 #include "game.h"
+#include "gameTimes.h"
 
 /* 함    수: int ChoiceOfCom(void).
  * 기    능: 무작위 값을 반환.
@@ -34,9 +35,9 @@ int ChoiceOfMe(void)
 
     while(1)
     {
-        fputs("가위<1> 바위<2> 보<3> 당신의 선택은? ", stdout);
+        fputs("가위<1> 바위<2> 보<3> 종료<4> 당신의 선택은? ", stdout);
         scanf("%d", &usrChoice);
-        if(usrChoice == 1 || usrChoice == 2 || usrChoice == 3) 
+        if(usrChoice == 1 || usrChoice == 2 || usrChoice == 3 || usrChoice == 4) 
             return usrChoice;
     }
 }
@@ -98,14 +99,17 @@ void WhoIsWinner(int com, int you)
     {
         case 0:
             fputs("비겼습니다. \n", stdout);
+            recodeRst(DRAW);
             return;
 
         case 1: case -2: //유저가 이기는 경우만 선택한다.
             fputs("당신이 승자입니다.\n", stdout);
+            recodeRst(WIN);
             return;
     }
 
     fputs("컴퓨터가 승자입니다.\n", stdout); //유저가 이기는 경우를 제외하면 모두 컴퓨터가 승자인 경우만 남는다.
+    recodeRst(LOSE);
 }
 
 /* 함    수: void ShowRSP(int rsp)

@@ -7,25 +7,38 @@
 CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 ChoiceOfCom	src/game.c	/^int ChoiceOfCom(void) $/;"	f
 ChoiceOfMe	src/game.c	/^int ChoiceOfMe(void)$/;"	f
+DRAW	src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
+EXIT	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
+LOSE	src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
-PAPER	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
+PAPER	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
-ROCK	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
-SCISSORS	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
+RC_ERR	src/dbg.h	/^#define RC_ERR /;"	d
+RC_NRM	src/dbg.h	/^#define RC_NRM /;"	d
+ROCK	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
+SCISSORS	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 ShowRSP	src/game.c	/^void ShowRSP(int rsp)$/;"	f
+WIN	src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
 WhoIsWinner	src/game.c	/^void WhoIsWinner(int com, int you)$/;"	f
 __COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
 __GAME_H__	src/game.h	/^#define __GAME_H__$/;"	d
+__GAME_TIMES_H__	src/gameTimes.h	/^#define __GAME_TIMES_H__$/;"	d
 __dbg_h__	src/dbg.h	/^#define __dbg_h__$/;"	d
 check	src/dbg.h	/^#define check(/;"	d
 check_debug	src/dbg.h	/^#define check_debug(/;"	d
 check_mem	src/dbg.h	/^#define check_mem(/;"	d
 clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
 debug	src/dbg.h	/^#define debug(/;"	d
+draw	src/gameTimes.c	/^static int draw = 0;$/;"	v	file:
 log_err	src/dbg.h	/^#define log_err(/;"	d
 log_info	src/dbg.h	/^#define log_info(/;"	d
 log_warn	src/dbg.h	/^#define log_warn(/;"	d
+lose	src/gameTimes.c	/^static int lose = 0;$/;"	v	file:
 main	src/main.c	/^int main(void)$/;"	f
+recodeRst	src/gameTimes.c	/^void recodeRst(int rst) $/;"	f
+rtnOdds	src/gameTimes.c	/^int rtnOdds(void) $/;"	f
 sentinel	src/dbg.h	/^#define sentinel(/;"	d
+showRst	src/gameTimes.c	/^void showRst(void) $/;"	f
+win	src/gameTimes.c	/^static int win = 0;  \/\/static 변수는 외부 파일에서 접근 불가.$/;"	v	file:
