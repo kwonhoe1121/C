@@ -31,7 +31,7 @@ check	src/dbg.h	/^#define check(/;"	d
 check_debug	src/dbg.h	/^#define check_debug(/;"	d
 check_mem	src/dbg.h	/^#define check_mem(/;"	d
 clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
-comMoney	src/gameMoney.c	/^static int comMoney = 1000;$/;"	v	file:
+comMoney	src/gameMoney.c	/^static int comMoney;$/;"	v	file:
 debug	src/dbg.h	/^#define debug(/;"	d
 draw	src/gameTimes.c	/^static int draw = 0;$/;"	v	file:
 getComMoney	src/gameMoney.c	/^int getComMoney(void) $/;"	f
@@ -41,15 +41,18 @@ log_info	src/dbg.h	/^#define log_info(/;"	d
 log_warn	src/dbg.h	/^#define log_warn(/;"	d
 lose	src/gameTimes.c	/^static int lose = 0;$/;"	v	file:
 main	src/main.c	/^int main(void)$/;"	f
-ratio	src/gameMoney.c	/^static int ratio = 200;$/;"	v	file:
+ratio	src/gameMoney.c	/^static int ratio;$/;"	v	file:
 recodeRst	src/gameTimes.c	/^void recodeRst(int rst) $/;"	f
 rtnOdds	src/gameTimes.c	/^int rtnOdds(void) $/;"	f
 sentinel	src/dbg.h	/^#define sentinel(/;"	d
 setComMoney	src/gameMoney.c	/^void setComMoney(int money)$/;"	f
 setComWinRstMoney	src/gameMoney.c	/^void setComWinRstMoney(void)$/;"	f
+setFirstChoiceComMoney	src/gameMoney.c	/^void setFirstChoiceComMoney(int money)$/;"	f
+setFirstChoiceUsrMoney	src/gameMoney.c	/^void setFirstChoiceUsrMoney(int money)$/;"	f
 setRatio	src/gameMoney.c	/^void setRatio(int money)$/;"	f
+setRatioByUsr	src/gameMoney.c	/^int setRatioByUsr(int ratio)$/;"	f
 setUsrMoney	src/gameMoney.c	/^void setUsrMoney(int money)$/;"	f
 setUsrWinRstMoney	src/gameMoney.c	/^void setUsrWinRstMoney(void)$/;"	f
 showRst	src/gameTimes.c	/^void showRst(void) $/;"	f
-usrMoney	src/gameMoney.c	/^static int usrMoney = 1000;$/;"	v	file:
+usrMoney	src/gameMoney.c	/^static int usrMoney;$/;"	v	file:
 win	src/gameTimes.c	/^static int win = 0;  \/\/static 변수는 외부 파일에서 접근 불가.$/;"	v	file:

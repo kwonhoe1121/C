@@ -10,9 +10,9 @@
 #include "gameTimes.h"
 #include "gameMoney.h"
 
-static int usrMoney = 1000;
-static int comMoney = 1000;
-static int ratio = 200;
+static int usrMoney;
+static int comMoney;
+static int ratio;
 
 /* 함    수: void calMoney(int rst).
  * 기    능: 결과에 근거해서 돈계산한다.
@@ -72,6 +72,43 @@ void setRatio(int money)
     else
         ratio=money;
 }
+
+/* 함   수: void setFirstChoiceUsrMoney(int money)
+ * 기   능: 사용자 최초 머니 선택 설정.
+ * 반   환:
+ *
+ */
+void setFirstChoiceUsrMoney(int money)
+{
+    setUsrMoney(money);
+}
+
+/* 함   수: void setFirstChoiceComMoney(int money)
+ * 기   능: 컴퓨터 최초 머니 선택 설정.
+ * 반   환:
+ *
+ */
+void setFirstChoiceComMoney(int money)
+{
+    setComMoney(money);
+}
+
+/* 함   수: int setRatioByUsr(int ratio)
+ * 기   능: 유저가 선택한 판돈 경계검사 후 설정
+ * 반   환:
+ *
+ */
+int setRatioByUsr(int ratio)
+{
+    if(ratio > getUsrMoney()) //유저 소유 금액 초과
+        return 1;
+    if(ratio > getComMoney()) //컴퓨터 소유 금액 초과
+        return -1;
+
+    setRatio(ratio);
+    return 0;
+}
+    
 
 /* getter setter 개념을 생각한다. */
 

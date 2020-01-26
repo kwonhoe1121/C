@@ -8,16 +8,22 @@
 #ifndef __GAME_MONEY_H__
 #define __GAME_MONEY_H__
 
-void calMoney(int rst);
-void setRatio(int money);
-
-void setUsrWinRstMoney(void);
-void setComWinRstMoney(void);
-
 void setUsrMoney(int money);
 void setComMoney(int money);
 int getUsrMoney(void);
 int getComMoney(void);
+
+//void calMoney(int rst);
+void setUsrWinRstMoney(void);
+void setComWinRstMoney(void);
+void setRatio(int money);
+
+/* 함수를 경계검사, 유효값 검사 등 추가 확장 시 이전에 정의했던 함수를 추가적으로 정의하는 것이 좋다 */
+void setFirstChoiceUsrMoney(int money);
+void setFirstChoiceComMoney(int money);
+int setRatioByUsr(int ratio);
+
+
 
 #endif
 
