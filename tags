@@ -7,6 +7,7 @@
 CFLAGS	dbg/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CFLAGS	dbg/ex19/Makefile	/^CFLAGS=-Wall -g$/;"	m
 CFLAGS	dbg/ex20/Makefile	/^CFLAGS=-Wall -g$/;"	m
+CFLAGS	dvdRentMngSysPjt/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CFLAGS	managePhonNumPjt/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CFLAGS	rockScissorsPaperPjt/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CHANGE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
@@ -20,6 +21,7 @@ EXIT	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"
 INPUT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 InputPhoneData	managePhonNumPjt/src/phoneFunc.c	/^void InputPhoneData(void)$/;"	f
 LIBS	dbg/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
+LIBS	dvdRentMngSysPjt/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIBS	managePhonNumPjt/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIBS	rockScissorsPaperPjt/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIST_NUM	managePhonNumPjt/src/phoneFunc.c	/^#define LIST_NUM /;"	d	file:
@@ -29,23 +31,28 @@ LoadDataFromFileInStruct	managePhonNumPjt/src/phoneFunc.c	/^void LoadDataFromFil
 NAME_LEN	managePhonNumPjt/src/phoneData.h	/^#define NAME_LEN /;"	d
 NRM_EXIT	rockScissorsPaperPjt/src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon3
 OBJECTS	dbg/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
+OBJECTS	dvdRentMngSysPjt/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 OBJECTS	managePhonNumPjt/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 OBJECTS	rockScissorsPaperPjt/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 PAPER	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 PHONE_LEN	managePhonNumPjt/src/phoneData.h	/^#define PHONE_LEN /;"	d
 PREFIX	dbg/Makefile	/^PREFIX?=\/usr\/local$/;"	m
+PREFIX	dvdRentMngSysPjt/Makefile	/^PREFIX?=\/usr\/local$/;"	m
 PREFIX	managePhonNumPjt/Makefile	/^PREFIX?=\/usr\/local$/;"	m
 PREFIX	rockScissorsPaperPjt/Makefile	/^PREFIX?=\/usr\/local$/;"	m
 QUIT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 RC_ERR	dbg/dbg.h	/^#define RC_ERR /;"	d
+RC_ERR	dvdRentMngSysPjt/src/dbg.h	/^#define RC_ERR /;"	d
 RC_ERR	rockScissorsPaperPjt/src/dbg.h	/^#define RC_ERR /;"	d
 RC_NRM	dbg/dbg.h	/^#define RC_NRM /;"	d
+RC_NRM	dvdRentMngSysPjt/src/dbg.h	/^#define RC_NRM /;"	d
 RC_NRM	rockScissorsPaperPjt/src/dbg.h	/^#define RC_NRM /;"	d
 ROCK	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 SCISSORS	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 SEARCH	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 SHOWALL	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 SOURCES	dbg/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+SOURCES	dvdRentMngSysPjt/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SOURCES	managePhonNumPjt/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SOURCES	rockScissorsPaperPjt/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 STORE_EXIT	rockScissorsPaperPjt/src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon3
@@ -58,6 +65,9 @@ StoreDataToFile	managePhonNumPjt/src/phoneFunc.c	/^void StoreDataToFile(void){$/
 StoreDataToFileInStruct	managePhonNumPjt/src/phoneFunc.c	/^void StoreDataToFileInStruct(void)$/;"	f
 WIN	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
 WhoIsWinner	rockScissorsPaperPjt/src/game.c	/^void WhoIsWinner(int com, int you)$/;"	f
+__COMMOM_H__	common.h	/^#define __COMMOM_H__$/;"	d
+__COMMOM_H__	dbg/common.h	/^#define __COMMOM_H__$/;"	d
+__COMMOM_H__	dvdRentMngSysPjt/src/common.h	/^#define __COMMOM_H__$/;"	d
 __COMMOM_H__	managePhonNumPjt/src/common.h	/^#define __COMMOM_H__$/;"	d
 __COMMOM_H__	rockScissorsPaperPjt/src/common.h	/^#define __COMMOM_H__$/;"	d
 __GAME_CONTINUE_H__	rockScissorsPaperPjt/src/gameContinue.h	/^#define __GAME_CONTINUE_H__$/;"	d
@@ -70,6 +80,7 @@ __SCREENOUT_H__	managePhonNumPjt/src/screenOut.h	/^#define __SCREENOUT_H__$/;"	d
 __dbg_h__	dbg/dbg.h	/^#define __dbg_h__$/;"	d
 __dbg_h__	dbg/ex19/dbg.h	/^#define __dbg_h__$/;"	d
 __dbg_h__	dbg/ex20/dbg.h	/^#define __dbg_h__$/;"	d
+__dbg_h__	dvdRentMngSysPjt/src/dbg.h	/^#define __dbg_h__$/;"	d
 __dbg_h__	managePhonNumPjt/src/dbg.h	/^#define __dbg_h__$/;"	d
 __dbg_h__	rockScissorsPaperPjt/src/dbg.h	/^#define __dbg_h__$/;"	d
 __phoneData	managePhonNumPjt/src/phoneData.h	/^typedef struct __phoneData $/;"	s
@@ -78,21 +89,25 @@ bubble_sort	dbg/ex20/ex20_obo.c	/^int *bubble_sort(int *numbers, int count, comp
 check	dbg/dbg.h	/^#define check(/;"	d
 check	dbg/ex19/dbg.h	/^#define check(/;"	d
 check	dbg/ex20/dbg.h	/^#define check(/;"	d
+check	dvdRentMngSysPjt/src/dbg.h	/^#define check(/;"	d
 check	managePhonNumPjt/src/dbg.h	/^#define check(/;"	d
 check	rockScissorsPaperPjt/src/dbg.h	/^#define check(/;"	d
 check_debug	dbg/dbg.h	/^#define check_debug(/;"	d
 check_debug	dbg/ex19/dbg.h	/^#define check_debug(/;"	d
 check_debug	dbg/ex20/dbg.h	/^#define check_debug(/;"	d
+check_debug	dvdRentMngSysPjt/src/dbg.h	/^#define check_debug(/;"	d
 check_debug	managePhonNumPjt/src/dbg.h	/^#define check_debug(/;"	d
 check_debug	rockScissorsPaperPjt/src/dbg.h	/^#define check_debug(/;"	d
 check_mem	dbg/dbg.h	/^#define check_mem(/;"	d
 check_mem	dbg/ex19/dbg.h	/^#define check_mem(/;"	d
 check_mem	dbg/ex20/dbg.h	/^#define check_mem(/;"	d
+check_mem	dvdRentMngSysPjt/src/dbg.h	/^#define check_mem(/;"	d
 check_mem	managePhonNumPjt/src/dbg.h	/^#define check_mem(/;"	d
 check_mem	rockScissorsPaperPjt/src/dbg.h	/^#define check_mem(/;"	d
 clean_errno	dbg/dbg.h	/^#define clean_errno(/;"	d
 clean_errno	dbg/ex19/dbg.h	/^#define clean_errno(/;"	d
 clean_errno	dbg/ex20/dbg.h	/^#define clean_errno(/;"	d
+clean_errno	dvdRentMngSysPjt/src/dbg.h	/^#define clean_errno(/;"	d
 clean_errno	managePhonNumPjt/src/dbg.h	/^#define clean_errno(/;"	d
 clean_errno	rockScissorsPaperPjt/src/dbg.h	/^#define clean_errno(/;"	d
 comMoney	rockScissorsPaperPjt/src/gameMoney.c	/^static int comMoney;$/;"	v	file:
@@ -101,6 +116,7 @@ compare_cb	dbg/ex20/ex20_obo.c	/^typedef int (*compare_cb) (int a, int b);$/;"	t
 debug	dbg/dbg.h	/^#define debug(/;"	d
 debug	dbg/ex19/dbg.h	/^#define debug(/;"	d
 debug	dbg/ex20/dbg.h	/^#define debug(/;"	d
+debug	dvdRentMngSysPjt/src/dbg.h	/^#define debug(/;"	d
 debug	managePhonNumPjt/src/dbg.h	/^#define debug(/;"	d
 debug	rockScissorsPaperPjt/src/dbg.h	/^#define debug(/;"	d
 die	dbg/ex20/ex20.c	/^void die(const char *message)$/;"	f
@@ -125,16 +141,19 @@ loadYourGameEnv	rockScissorsPaperPjt/src/gameContinue.c	/^int loadYourGameEnv(vo
 log_err	dbg/dbg.h	/^#define log_err(/;"	d
 log_err	dbg/ex19/dbg.h	/^#define log_err(/;"	d
 log_err	dbg/ex20/dbg.h	/^#define log_err(/;"	d
+log_err	dvdRentMngSysPjt/src/dbg.h	/^#define log_err(/;"	d
 log_err	managePhonNumPjt/src/dbg.h	/^#define log_err(/;"	d
 log_err	rockScissorsPaperPjt/src/dbg.h	/^#define log_err(/;"	d
 log_info	dbg/dbg.h	/^#define log_info(/;"	d
 log_info	dbg/ex19/dbg.h	/^#define log_info(/;"	d
 log_info	dbg/ex20/dbg.h	/^#define log_info(/;"	d
+log_info	dvdRentMngSysPjt/src/dbg.h	/^#define log_info(/;"	d
 log_info	managePhonNumPjt/src/dbg.h	/^#define log_info(/;"	d
 log_info	rockScissorsPaperPjt/src/dbg.h	/^#define log_info(/;"	d
 log_warn	dbg/dbg.h	/^#define log_warn(/;"	d
 log_warn	dbg/ex19/dbg.h	/^#define log_warn(/;"	d
 log_warn	dbg/ex20/dbg.h	/^#define log_warn(/;"	d
+log_warn	dvdRentMngSysPjt/src/dbg.h	/^#define log_warn(/;"	d
 log_warn	managePhonNumPjt/src/dbg.h	/^#define log_warn(/;"	d
 log_warn	rockScissorsPaperPjt/src/dbg.h	/^#define log_warn(/;"	d
 lose	rockScissorsPaperPjt/src/gameTimes.c	/^static int lose = 0;$/;"	v	file:
@@ -156,6 +175,7 @@ rtnOdds	rockScissorsPaperPjt/src/gameTimes.c	/^int rtnOdds(void) $/;"	f
 sentinel	dbg/dbg.h	/^#define sentinel(/;"	d
 sentinel	dbg/ex19/dbg.h	/^#define sentinel(/;"	d
 sentinel	dbg/ex20/dbg.h	/^#define sentinel(/;"	d
+sentinel	dvdRentMngSysPjt/src/dbg.h	/^#define sentinel(/;"	d
 sentinel	managePhonNumPjt/src/dbg.h	/^#define sentinel(/;"	d
 sentinel	rockScissorsPaperPjt/src/dbg.h	/^#define sentinel(/;"	d
 setComMoney	rockScissorsPaperPjt/src/gameMoney.c	/^void setComMoney(int money)$/;"	f

@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddCusInfo	cusInfoAccess.c	/^int AddCusInfo(char * ID, char * name, char * num)$/;"	f
+CUS_REGIST	main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+CUS_SEARCH	main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+GetCusPtrByID	cusInfoAccess.c	/^cusInfo * GetCusPtrByID(char * ID)$/;"	f
+ID	cusInfo.h	/^    char ID[ID_LEN];$/;"	m	struct:__cusInfo
+ID_LEN	cusInfo.h	/^#define ID_LEN /;"	d
+IsRegistID	cusInfoAccess.c	/^int IsRegistID(char * ID)$/;"	f
+MAX_CUSTOMER	cusInfoAccess.c	/^#define MAX_CUSTOMER /;"	d	file:
+NAME_LEN	cusInfo.h	/^#define NAME_LEN /;"	d
+PHONE_LEN	cusInfo.h	/^#define PHONE_LEN /;"	d
+QUIT	main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+RC_ERR	dbg.h	/^#define RC_ERR /;"	d
+RC_NRM	dbg.h	/^#define RC_NRM /;"	d
+ShowCustomerInfo	screenOut.c	/^void ShowCustomerInfo(cusInfo * pCus)$/;"	f
+ShowMenu	screenOut.c	/^void ShowMenu(void)$/;"	f
+__COMMOM_H__	common.h	/^#define __COMMOM_H__$/;"	d
+__CUSACCESS_H__	cusInfoAccess.h	/^#define __CUSACCESS_H__$/;"	d
+__CUSACCESS_H__	cusManager.c	/^#define __CUSACCESS_H__$/;"	d	file:
+__CUSINFO_H__	cusInfo.h	/^#define __CUSINFO_H__$/;"	d
+__CUSMGR_H__	cusManager.h	/^#define __CUSMGR_H__$/;"	d
+__SCREENOUT_H__	screenOut.h	/^#define __SCREENOUT_H__$/;"	d
+__cusInfo	cusInfo.h	/^typedef struct __cusInfo $/;"	s
+__dbg_h__	dbg.h	/^#define __dbg_h__$/;"	d
+check	dbg.h	/^#define check(/;"	d
+check_debug	dbg.h	/^#define check_debug(/;"	d
+check_mem	dbg.h	/^#define check_mem(/;"	d
+clean_errno	dbg.h	/^#define clean_errno(/;"	d
+cusInfo	cusInfo.h	/^} cusInfo;$/;"	t	typeref:struct:__cusInfo
+cusList	cusInfoAccess.c	/^static cusInfo * cusList[MAX_CUSTOMER];$/;"	v	file:
+debug	dbg.h	/^#define debug(/;"	d
+log_err	dbg.h	/^#define log_err(/;"	d
+log_info	dbg.h	/^#define log_info(/;"	d
+log_warn	dbg.h	/^#define log_warn(/;"	d
+main	main.c	/^int main(void)$/;"	f
+name	cusInfo.h	/^    char name[NAME_LEN];$/;"	m	struct:__cusInfo
+numOfCustomer	cusInfoAccess.c	/^static int numOfCustomer=0;$/;"	v	file:
+phoneNum	cusInfo.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__cusInfo
+sentinel	dbg.h	/^#define sentinel(/;"	d
