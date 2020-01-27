@@ -14,6 +14,18 @@ void recodeRst(int rst);
 int rtnOdds(void);
 void showRst(void);
 
+int getWin(void);
+int getLose(void);
+int getDraw(void);
+
+void setDraw(int inDraw);
+void setLose(int inLose);
+void setWin(int inWin);
+
+void setTimesInfo(int win, int lose, int draw);
+int loadTimesInfo(void);
+int storeTimesInfo(void);
+
 #endif
 
 /* end of file */

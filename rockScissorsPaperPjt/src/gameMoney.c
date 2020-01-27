@@ -156,4 +156,103 @@ int getComMoney(void)
     return comMoney;
 }
 
+/* 함    수: int getRatio(void).
+ * 기    능: 판돈 반환
+ * 반    환: 
+ *
+ */
+int getRatio(void) 
+{
+    return ratio;
+}
+
+/* 함    수: void setMoneyInfo(int usrMoney, int comMoney, int ratio)
+ * 기    능: 
+ * 반    환: 
+ *
+ */
+void setMoneyInfo(int usrMoney, int comMoney, int ratio)
+{
+    setUsrMoney(usrMoney);
+    setComMoney(comMoney);
+    setRatio(ratio);
+}
+
+void initYourGame(void)
+{
+    int youChoiceMoney;
+
+    puts("자! 게임을 시작합니다.");
+    puts("");
+
+    fputs("# 당신의 머니를 입력하세요: ", stdout);
+    scanf("%d", &youChoiceMoney);
+    setFirstChoiceUsrMoney(youChoiceMoney);
+    setFirstChoiceComMoney(1000);
+}
+
+
+/* 함   수: int storeMoneyInfo(void)
+ * 기   능: 머니 관련 정보 파일 저장
+ * 반   환:
+ *
+ */
+int storeMoneyInfo(void)
+{
+    int usrMoney = getUsrMoney();
+    int comMoney = getComMoney();
+    int ratio = getRatio();
+
+    FILE * fp = fopen("money-info", "wb");
+
+    check(fp, "money-info file open failed!!");
+
+    debug("usrMoney: %d, comMoney: %d, ratio: %d", usrMoney, comMoney, ratio);
+
+    fwrite(&usrMoney, sizeof(int), 1, fp);
+    fwrite(&comMoney, sizeof(int), 1, fp);
+    fwrite(&ratio, sizeof(int), 1, fp);
+
+    fclose(fp);
+
+    return RC_NRM;
+
+error:
+    if(fp) fclose(fp);
+    return RC_ERR;
+}
+
+/* 함   수: int loadMoneyInfo(void)
+ * 기   능: 머니 관련 정보 파일 불러오기
+ * 반   환:
+ *
+ */
+int loadMoneyInfo(void)
+{
+    int usrMoney;
+    int comMoney;
+    int ratio;
+
+    FILE * fp = fopen("money-info", "rb");
+
+    check(fp, "money-info file open failed!!");
+
+    fread(&usrMoney, sizeof(int), 1, fp);
+    fread(&comMoney, sizeof(int), 1, fp);
+    fread(&ratio, sizeof(int), 1, fp);
+
+    setMoneyInfo(usrMoney, comMoney, ratio);
+    debug("usrMoney: %d, comMoney: %d, ratio: %d", usrMoney, comMoney, ratio);
+
+    fclose(fp);
+
+    return RC_NRM;
+
+error:
+    if(fp) fclose(fp);
+    return RC_ERR;
+}
+
 /* end of file */
+
+

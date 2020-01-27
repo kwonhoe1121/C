@@ -12,6 +12,7 @@ void setUsrMoney(int money);
 void setComMoney(int money);
 int getUsrMoney(void);
 int getComMoney(void);
+int getRatio(void);
 
 //void calMoney(int rst);
 void setUsrWinRstMoney(void);
@@ -23,7 +24,10 @@ void setFirstChoiceUsrMoney(int money);
 void setFirstChoiceComMoney(int money);
 int setRatioByUsr(int ratio);
 
-
+void setMoneyInfo(int usrMoney, int common, int ratio);
+int loadMoneyInfo(void);
+int storeMoneyInfo(void);
+void initYourGame(void);
 
 #endif
 

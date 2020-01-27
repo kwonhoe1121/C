@@ -9,30 +9,30 @@
 #include "game.h"
 #include "gameTimes.h"
 #include "gameMoney.h"
+#include "gameContinue.h"
 
 int main(void)
 {
     int com;
     int you;
-    int youChoiceMoney;
     int youChoiceRatio;
     int rc;
 
     system("clear");
 
-    puts("자! 게임을 시작합니다.");
-    puts("");
-
-    fputs("# 당신의 머니를 입력하세요: ", stdout);
-    scanf("%d", &youChoiceMoney);
-    setFirstChoiceUsrMoney(youChoiceMoney);
-    setFirstChoiceComMoney(1000);
-
-    printf("당신의 게임 머니: %d \n", getUsrMoney());
-    printf("컴퓨터의 게임 머니: %d \n", getComMoney());
-    puts("");
+    rc = loadYourGameEnv();
+    check(rc == RC_NRM, "loadYourGameEnv() function failed()!!");
     
     while(1) {
+		puts("☆☆☆☆☆☆ 대결! ☆☆☆☆☆☆!!");
+
+		you=ChoiceOfMe();
+        if(you == EXIT) {
+            setExitStatus(STORE_EXIT);
+            break;
+        }
+        com=ChoiceOfCom();
+
         puts("$ 판돈을 설정해주세요! $");
         fputs("판돈 입력 : ", stdout);
         scanf("%d", &youChoiceRatio);
@@ -60,11 +60,6 @@ int main(void)
             continue;
         }
 
-		puts("☆☆☆☆☆☆ 대결! ☆☆☆☆☆☆!!");
-
-		you=ChoiceOfMe();
-        if(you == EXIT) break;
-        com=ChoiceOfCom();
 
 		puts("");
 	   
@@ -98,14 +93,22 @@ int main(void)
         printf("게이머 머니: %d  \n", getUsrMoney());
         printf("컴퓨터 머니: %d  \n", getComMoney());
 
-        if(getUsrMoney() == 0 || getComMoney() == 0) break;
+        if(getUsrMoney() == 0 || getComMoney() == 0) {
+            setExitStatus(NRM_EXIT); //게임이 파산으로 끝나면 그냥 종료 
+            break;
+        }
 
         puts("");
 
     }
     puts("");
-
+    
     showRst();
+
+    rc = storeYourGameEnv();
+    check(rc == RC_NRM, "storeYourGameEnv() function failed!!");
+
+    fputs("이용해 주셔서 고마워요~ \n", stdout);
 
     return RC_NRM;
 

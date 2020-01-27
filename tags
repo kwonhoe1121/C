@@ -9,14 +9,15 @@ CFLAGS	dbg/ex19/Makefile	/^CFLAGS=-Wall -g$/;"	m
 CFLAGS	dbg/ex20/Makefile	/^CFLAGS=-Wall -g$/;"	m
 CFLAGS	managePhonNumPjt/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CFLAGS	rockScissorsPaperPjt/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
-CHANGE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon3	file:
+CHANGE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 ChangePhoneData	managePhonNumPjt/src/phoneFunc.c	/^void ChangePhoneData(void)$/;"	f
 ChoiceOfCom	rockScissorsPaperPjt/src/game.c	/^int ChoiceOfCom(void) $/;"	f
 ChoiceOfMe	rockScissorsPaperPjt/src/game.c	/^int ChoiceOfMe(void)$/;"	f
-DELETE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon3	file:
+DELETE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 DRAW	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
 DeletePhoneData	managePhonNumPjt/src/phoneFunc.c	/^void DeletePhoneData(void)$/;"	f
-INPUT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon3	file:
+EXIT	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
+INPUT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 InputPhoneData	managePhonNumPjt/src/phoneFunc.c	/^void InputPhoneData(void)$/;"	f
 LIBS	dbg/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIBS	managePhonNumPjt/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
@@ -26,26 +27,28 @@ LOSE	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum
 LoadDataFromFile	managePhonNumPjt/src/phoneFunc.c	/^void LoadDataFromFile(void){$/;"	f
 LoadDataFromFileInStruct	managePhonNumPjt/src/phoneFunc.c	/^void LoadDataFromFileInStruct(void)$/;"	f
 NAME_LEN	managePhonNumPjt/src/phoneData.h	/^#define NAME_LEN /;"	d
+NRM_EXIT	rockScissorsPaperPjt/src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon3
 OBJECTS	dbg/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 OBJECTS	managePhonNumPjt/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 OBJECTS	rockScissorsPaperPjt/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
-PAPER	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
+PAPER	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 PHONE_LEN	managePhonNumPjt/src/phoneData.h	/^#define PHONE_LEN /;"	d
 PREFIX	dbg/Makefile	/^PREFIX?=\/usr\/local$/;"	m
 PREFIX	managePhonNumPjt/Makefile	/^PREFIX?=\/usr\/local$/;"	m
 PREFIX	rockScissorsPaperPjt/Makefile	/^PREFIX?=\/usr\/local$/;"	m
-QUIT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon3	file:
+QUIT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 RC_ERR	dbg/dbg.h	/^#define RC_ERR /;"	d
 RC_ERR	rockScissorsPaperPjt/src/dbg.h	/^#define RC_ERR /;"	d
 RC_NRM	dbg/dbg.h	/^#define RC_NRM /;"	d
 RC_NRM	rockScissorsPaperPjt/src/dbg.h	/^#define RC_NRM /;"	d
-ROCK	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
-SCISSORS	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER};$/;"	e	enum:__anon1
-SEARCH	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon3	file:
-SHOWALL	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon3	file:
+ROCK	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
+SCISSORS	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
+SEARCH	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
+SHOWALL	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
 SOURCES	dbg/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SOURCES	managePhonNumPjt/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SOURCES	rockScissorsPaperPjt/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+STORE_EXIT	rockScissorsPaperPjt/src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon3
 SearchPhoneData	managePhonNumPjt/src/phoneFunc.c	/^void SearchPhoneData(void)$/;"	f
 ShowAllData	managePhonNumPjt/src/phoneFunc.c	/^void ShowAllData(void)$/;"	f
 ShowMenu	managePhonNumPjt/src/screenOut.c	/^void ShowMenu(void)$/;"	f
@@ -57,7 +60,9 @@ WIN	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:
 WhoIsWinner	rockScissorsPaperPjt/src/game.c	/^void WhoIsWinner(int com, int you)$/;"	f
 __COMMOM_H__	managePhonNumPjt/src/common.h	/^#define __COMMOM_H__$/;"	d
 __COMMOM_H__	rockScissorsPaperPjt/src/common.h	/^#define __COMMOM_H__$/;"	d
+__GAME_CONTINUE_H__	rockScissorsPaperPjt/src/gameContinue.h	/^#define __GAME_CONTINUE_H__$/;"	d
 __GAME_H__	rockScissorsPaperPjt/src/game.h	/^#define __GAME_H__$/;"	d
+__GAME_MONEY_H__	rockScissorsPaperPjt/src/gameMoney.h	/^#define __GAME_MONEY_H__$/;"	d
 __GAME_TIMES_H__	rockScissorsPaperPjt/src/gameTimes.h	/^#define __GAME_TIMES_H__$/;"	d
 __PHONEDATA_H__	managePhonNumPjt/src/phoneData.h	/^#define __PHONEDATA_H__$/;"	d
 __PHONEFUNC_H__	managePhonNumPjt/src/phoneFunc.h	/^#define __PHONEFUNC_H__$/;"	d
@@ -90,6 +95,7 @@ clean_errno	dbg/ex19/dbg.h	/^#define clean_errno(/;"	d
 clean_errno	dbg/ex20/dbg.h	/^#define clean_errno(/;"	d
 clean_errno	managePhonNumPjt/src/dbg.h	/^#define clean_errno(/;"	d
 clean_errno	rockScissorsPaperPjt/src/dbg.h	/^#define clean_errno(/;"	d
+comMoney	rockScissorsPaperPjt/src/gameMoney.c	/^static int comMoney;$/;"	v	file:
 compare_cb	dbg/ex20/ex20.c	/^typedef int (*compare_cb) (int a, int b);$/;"	t	file:
 compare_cb	dbg/ex20/ex20_obo.c	/^typedef int (*compare_cb) (int a, int b);$/;"	t	file:
 debug	dbg/dbg.h	/^#define debug(/;"	d
@@ -99,8 +105,23 @@ debug	managePhonNumPjt/src/dbg.h	/^#define debug(/;"	d
 debug	rockScissorsPaperPjt/src/dbg.h	/^#define debug(/;"	d
 die	dbg/ex20/ex20.c	/^void die(const char *message)$/;"	f
 die	dbg/ex20/ex20_obo.c	/^void die(const char *message)$/;"	f
-draw	rockScissorsPaperPjt/src/gameTimes.c	/^int draw = 0;$/;"	v
+draw	rockScissorsPaperPjt/src/gameTimes.c	/^static int draw = 0;$/;"	v	file:
 dump	dbg/ex20/ex20.c	/^void dump(compare_cb cmp)$/;"	f
+exitStatus	rockScissorsPaperPjt/src/gameContinue.c	/^static int exitStatus;$/;"	v	file:
+getComMoney	rockScissorsPaperPjt/src/gameMoney.c	/^int getComMoney(void) $/;"	f
+getDraw	rockScissorsPaperPjt/src/gameTimes.c	/^int getDraw(void)$/;"	f
+getExitStatus	rockScissorsPaperPjt/src/gameContinue.c	/^int getExitStatus(void)$/;"	f
+getLose	rockScissorsPaperPjt/src/gameTimes.c	/^int getLose(void)$/;"	f
+getRatio	rockScissorsPaperPjt/src/gameMoney.c	/^int getRatio(void) $/;"	f
+getUsrMoney	rockScissorsPaperPjt/src/gameMoney.c	/^int getUsrMoney(void) $/;"	f
+getWin	rockScissorsPaperPjt/src/gameTimes.c	/^int getWin(void)$/;"	f
+initYourGame	rockScissorsPaperPjt/src/gameMoney.c	/^void initYourGame(void)$/;"	f
+isContinueYourGame	rockScissorsPaperPjt/src/gameContinue.c	/^int isContinueYourGame(void)$/;"	f
+isStoreYourGameInfo	rockScissorsPaperPjt/src/gameContinue.c	/^int isStoreYourGameInfo(void)$/;"	f
+loadExitStatus	rockScissorsPaperPjt/src/gameContinue.c	/^int loadExitStatus(void)$/;"	f
+loadMoneyInfo	rockScissorsPaperPjt/src/gameMoney.c	/^int loadMoneyInfo(void)$/;"	f
+loadTimesInfo	rockScissorsPaperPjt/src/gameTimes.c	/^int loadTimesInfo(void)$/;"	f
+loadYourGameEnv	rockScissorsPaperPjt/src/gameContinue.c	/^int loadYourGameEnv(void)$/;"	f
 log_err	dbg/dbg.h	/^#define log_err(/;"	d
 log_err	dbg/ex19/dbg.h	/^#define log_err(/;"	d
 log_err	dbg/ex20/dbg.h	/^#define log_err(/;"	d
@@ -116,7 +137,7 @@ log_warn	dbg/ex19/dbg.h	/^#define log_warn(/;"	d
 log_warn	dbg/ex20/dbg.h	/^#define log_warn(/;"	d
 log_warn	managePhonNumPjt/src/dbg.h	/^#define log_warn(/;"	d
 log_warn	rockScissorsPaperPjt/src/dbg.h	/^#define log_warn(/;"	d
-lose	rockScissorsPaperPjt/src/gameTimes.c	/^int lose = 0;$/;"	v
+lose	rockScissorsPaperPjt/src/gameTimes.c	/^static int lose = 0;$/;"	v	file:
 main	dbg/ex19/ex19.c	/^int main(int argc, char *argv[])$/;"	f
 main	dbg/ex20/ex20.c	/^int main(int argc, char *argv[])$/;"	f
 main	dbg/ex20/ex20_obo.c	/^int main(int argc, char *argv[])$/;"	f
@@ -127,6 +148,7 @@ numOfData	managePhonNumPjt/src/phoneFunc.c	/^int numOfData=0;$/;"	v
 phoneData	managePhonNumPjt/src/phoneData.h	/^} phoneData;$/;"	t	typeref:struct:__phoneData
 phoneList	managePhonNumPjt/src/phoneFunc.c	/^phoneData * phoneList[LIST_NUM]; \/\/구조체 포인터 배열 선언, 이 배열이 가지고 있는 타입이 포인터라는 의미이다.$/;"	v
 phoneNum	managePhonNumPjt/src/phoneData.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__phoneData
+ratio	rockScissorsPaperPjt/src/gameMoney.c	/^static int ratio;$/;"	v	file:
 recodeRst	rockScissorsPaperPjt/src/gameTimes.c	/^void recodeRst(int rst) $/;"	f
 reverse_order	dbg/ex20/ex20.c	/^int reverse_order(int a, int b)$/;"	f
 reverse_order	dbg/ex20/ex20_obo.c	/^int reverse_order(int a, int b)$/;"	f
@@ -136,9 +158,27 @@ sentinel	dbg/ex19/dbg.h	/^#define sentinel(/;"	d
 sentinel	dbg/ex20/dbg.h	/^#define sentinel(/;"	d
 sentinel	managePhonNumPjt/src/dbg.h	/^#define sentinel(/;"	d
 sentinel	rockScissorsPaperPjt/src/dbg.h	/^#define sentinel(/;"	d
-showRst	rockScissorsPaperPjt/src/gameTimes.c	/^int showRst(void) $/;"	f
+setComMoney	rockScissorsPaperPjt/src/gameMoney.c	/^void setComMoney(int money)$/;"	f
+setComWinRstMoney	rockScissorsPaperPjt/src/gameMoney.c	/^void setComWinRstMoney(void)$/;"	f
+setDraw	rockScissorsPaperPjt/src/gameTimes.c	/^void setDraw(int inDraw)$/;"	f
+setExitStatus	rockScissorsPaperPjt/src/gameContinue.c	/^void setExitStatus(int exit)$/;"	f
+setFirstChoiceComMoney	rockScissorsPaperPjt/src/gameMoney.c	/^void setFirstChoiceComMoney(int money)$/;"	f
+setFirstChoiceUsrMoney	rockScissorsPaperPjt/src/gameMoney.c	/^void setFirstChoiceUsrMoney(int money)$/;"	f
+setLose	rockScissorsPaperPjt/src/gameTimes.c	/^void setLose(int inLose)$/;"	f
+setMoneyInfo	rockScissorsPaperPjt/src/gameMoney.c	/^void setMoneyInfo(int usrMoney, int comMoney, int ratio)$/;"	f
+setRatio	rockScissorsPaperPjt/src/gameMoney.c	/^void setRatio(int money)$/;"	f
+setRatioByUsr	rockScissorsPaperPjt/src/gameMoney.c	/^int setRatioByUsr(int ratio)$/;"	f
+setTimesInfo	rockScissorsPaperPjt/src/gameTimes.c	/^void setTimesInfo(int win, int lose, int draw)$/;"	f
+setUsrMoney	rockScissorsPaperPjt/src/gameMoney.c	/^void setUsrMoney(int money)$/;"	f
+setUsrWinRstMoney	rockScissorsPaperPjt/src/gameMoney.c	/^void setUsrWinRstMoney(void)$/;"	f
+setWin	rockScissorsPaperPjt/src/gameTimes.c	/^void setWin(int inWin)$/;"	f
+showRst	rockScissorsPaperPjt/src/gameTimes.c	/^void showRst(void) $/;"	f
 sorted_order	dbg/ex20/ex20.c	/^int sorted_order(int a, int b)$/;"	f
 sorted_order	dbg/ex20/ex20_obo.c	/^int sorted_order(int a, int b)$/;"	f
+storeExitStauts	rockScissorsPaperPjt/src/gameContinue.c	/^int storeExitStauts(void)$/;"	f
+storeMoneyInfo	rockScissorsPaperPjt/src/gameMoney.c	/^int storeMoneyInfo(void)$/;"	f
+storeTimesInfo	rockScissorsPaperPjt/src/gameTimes.c	/^int storeTimesInfo(void)$/;"	f
+storeYourGameEnv	rockScissorsPaperPjt/src/gameContinue.c	/^int storeYourGameEnv(void)$/;"	f
 strange_order	dbg/ex20/ex20.c	/^int strange_order(int a, int b)$/;"	f
 strange_order	dbg/ex20/ex20_obo.c	/^int strange_order(int a, int b)$/;"	f
 test_check	dbg/ex19/ex19.c	/^int test_check(char *file_name)$/;"	f
@@ -151,4 +191,5 @@ test_log_warn	dbg/ex19/ex19.c	/^void test_log_warn()$/;"	f
 test_sentinel	dbg/ex19/ex19.c	/^int test_sentinel(int code)$/;"	f
 test_sorting	dbg/ex20/ex20.c	/^void test_sorting(int *numbers, int count, compare_cb cmp)$/;"	f
 test_sorting	dbg/ex20/ex20_obo.c	/^void test_sorting(int *numbers, int count, compare_cb cmp)$/;"	f
-win	rockScissorsPaperPjt/src/gameTimes.c	/^int win = 0;$/;"	v
+usrMoney	rockScissorsPaperPjt/src/gameMoney.c	/^static int usrMoney;$/;"	v	file:
+win	rockScissorsPaperPjt/src/gameTimes.c	/^static int win = 0;  \/\/static 변수는 외부 파일에서 접근 불가.$/;"	v	file:

@@ -11,6 +11,7 @@ DRAW	src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
 EXIT	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LOSE	src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
+NRM_EXIT	src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon3
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 PAPER	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
@@ -19,10 +20,12 @@ RC_NRM	src/dbg.h	/^#define RC_NRM /;"	d
 ROCK	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 SCISSORS	src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+STORE_EXIT	src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon3
 ShowRSP	src/game.c	/^void ShowRSP(int rsp)$/;"	f
 WIN	src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
 WhoIsWinner	src/game.c	/^void WhoIsWinner(int com, int you)$/;"	f
 __COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
+__GAME_CONTINUE_H__	src/gameContinue.h	/^#define __GAME_CONTINUE_H__$/;"	d
 __GAME_H__	src/game.h	/^#define __GAME_H__$/;"	d
 __GAME_MONEY_H__	src/gameMoney.h	/^#define __GAME_MONEY_H__$/;"	d
 __GAME_TIMES_H__	src/gameTimes.h	/^#define __GAME_TIMES_H__$/;"	d
@@ -34,8 +37,21 @@ clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
 comMoney	src/gameMoney.c	/^static int comMoney;$/;"	v	file:
 debug	src/dbg.h	/^#define debug(/;"	d
 draw	src/gameTimes.c	/^static int draw = 0;$/;"	v	file:
+exitStatus	src/gameContinue.c	/^static int exitStatus;$/;"	v	file:
 getComMoney	src/gameMoney.c	/^int getComMoney(void) $/;"	f
+getDraw	src/gameTimes.c	/^int getDraw(void)$/;"	f
+getExitStatus	src/gameContinue.c	/^int getExitStatus(void)$/;"	f
+getLose	src/gameTimes.c	/^int getLose(void)$/;"	f
+getRatio	src/gameMoney.c	/^int getRatio(void) $/;"	f
 getUsrMoney	src/gameMoney.c	/^int getUsrMoney(void) $/;"	f
+getWin	src/gameTimes.c	/^int getWin(void)$/;"	f
+initYourGame	src/gameMoney.c	/^void initYourGame(void)$/;"	f
+isContinueYourGame	src/gameContinue.c	/^int isContinueYourGame(void)$/;"	f
+isStoreYourGameInfo	src/gameContinue.c	/^int isStoreYourGameInfo(void)$/;"	f
+loadExitStatus	src/gameContinue.c	/^int loadExitStatus(void)$/;"	f
+loadMoneyInfo	src/gameMoney.c	/^int loadMoneyInfo(void)$/;"	f
+loadTimesInfo	src/gameTimes.c	/^int loadTimesInfo(void)$/;"	f
+loadYourGameEnv	src/gameContinue.c	/^int loadYourGameEnv(void)$/;"	f
 log_err	src/dbg.h	/^#define log_err(/;"	d
 log_info	src/dbg.h	/^#define log_info(/;"	d
 log_warn	src/dbg.h	/^#define log_warn(/;"	d
@@ -47,12 +63,22 @@ rtnOdds	src/gameTimes.c	/^int rtnOdds(void) $/;"	f
 sentinel	src/dbg.h	/^#define sentinel(/;"	d
 setComMoney	src/gameMoney.c	/^void setComMoney(int money)$/;"	f
 setComWinRstMoney	src/gameMoney.c	/^void setComWinRstMoney(void)$/;"	f
+setDraw	src/gameTimes.c	/^void setDraw(int inDraw)$/;"	f
+setExitStatus	src/gameContinue.c	/^void setExitStatus(int exit)$/;"	f
 setFirstChoiceComMoney	src/gameMoney.c	/^void setFirstChoiceComMoney(int money)$/;"	f
 setFirstChoiceUsrMoney	src/gameMoney.c	/^void setFirstChoiceUsrMoney(int money)$/;"	f
+setLose	src/gameTimes.c	/^void setLose(int inLose)$/;"	f
+setMoneyInfo	src/gameMoney.c	/^void setMoneyInfo(int usrMoney, int comMoney, int ratio)$/;"	f
 setRatio	src/gameMoney.c	/^void setRatio(int money)$/;"	f
 setRatioByUsr	src/gameMoney.c	/^int setRatioByUsr(int ratio)$/;"	f
+setTimesInfo	src/gameTimes.c	/^void setTimesInfo(int win, int lose, int draw)$/;"	f
 setUsrMoney	src/gameMoney.c	/^void setUsrMoney(int money)$/;"	f
 setUsrWinRstMoney	src/gameMoney.c	/^void setUsrWinRstMoney(void)$/;"	f
+setWin	src/gameTimes.c	/^void setWin(int inWin)$/;"	f
 showRst	src/gameTimes.c	/^void showRst(void) $/;"	f
+storeExitStauts	src/gameContinue.c	/^int storeExitStauts(void)$/;"	f
+storeMoneyInfo	src/gameMoney.c	/^int storeMoneyInfo(void)$/;"	f
+storeTimesInfo	src/gameTimes.c	/^int storeTimesInfo(void)$/;"	f
+storeYourGameEnv	src/gameContinue.c	/^int storeYourGameEnv(void)$/;"	f
 usrMoney	src/gameMoney.c	/^static int usrMoney;$/;"	v	file:
 win	src/gameTimes.c	/^static int win = 0;  \/\/static 변수는 외부 파일에서 접근 불가.$/;"	v	file:
