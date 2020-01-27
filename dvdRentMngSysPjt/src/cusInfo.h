@@ -14,7 +14,7 @@
 
 typedef struct __cusInfo 
 {    
-    char ID[ID_LEN];
+    char ID[ID_LEN]; //고유값 key 
     char name[NAME_LEN];
     char phoneNum[PHONE_LEN];
 } cusInfo;

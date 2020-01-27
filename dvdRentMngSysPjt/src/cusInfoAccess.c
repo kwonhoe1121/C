@@ -1,5 +1,5 @@
-/* Name: cusInfoAccess.c  ver 1.1
- * Content: 고객 정보 저장 및 참조 함수들의 정의.
+/* Name: cusInfoCAccess.c  ver 1.0
+ * Content: 고객 정보 저장 및 참조 함수들의 정의
  * Implementation: KJJ
  * 
  * Last modified 2020/01/27
@@ -14,23 +14,11 @@ static int numOfCustomer=0;
 
 /* 함    수: int AddCusInfo (char * ID, char * name, char * num)
  * 기    능: cusInfo 할당 및 저장. 
- * 반    환: 성공 시 '등록된 정보의 개수', 실패 시 0을 반환.
+ * 반    환: 성공 시 '등록된 정보의 수', 실패 시 0을 반환.
  *
  */
 int AddCusInfo(char * ID, char * name, char * num)
 {
-    cusInfo * pCus;
-    
-    if(numOfCustomer>=MAX_CUSTOMER)
-        return 0;  // 입력 실패
-
-    pCus=(cusInfo*)malloc(sizeof(cusInfo));
-    strcpy(pCus->ID, ID);
-    strcpy(pCus->name, name);
-    strcpy(pCus->phoneNum, num);
-
-    cusList[numOfCustomer++]=pCus;
-    return numOfCustomer;   // 입력 성공
 }
 
 
@@ -41,15 +29,6 @@ int AddCusInfo(char * ID, char * name, char * num)
  */
 cusInfo * GetCusPtrByID(char * ID)
 {
-    int i;
-
-    for(i=0; i<numOfCustomer; i++)
-    {
-        if(!strcmp(cusList[i]->ID, ID))
-            return cusList[i];
-    }
-    
-    return (cusInfo *)0;
 }
 
 
@@ -60,12 +39,6 @@ cusInfo * GetCusPtrByID(char * ID)
  */
 int IsRegistID(char * ID)
 {
-    cusInfo * pCus = GetCusPtrByID(ID);
-
-    if(pCus==0)
-        return 0;  // 가입 안된 경우.
-    else
-        return 1;  // 가입 된 경우.
 }
 
 /* end of file */

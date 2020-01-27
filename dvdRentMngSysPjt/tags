@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddCusInfo	src/cusInfoAccess.c	/^int AddCusInfo(char * ID, char * name, char * num)$/;"	f
+CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
+CUS_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+CUS_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+GetCusPtrByID	src/cusInfoAccess.c	/^cusInfo * GetCusPtrByID(char * ID)$/;"	f
+ID	src/cusInfo.h	/^    char ID[ID_LEN]; \/\/고유값 key $/;"	m	struct:__cusInfo
+ID_LEN	src/cusInfo.h	/^#define ID_LEN /;"	d
+IsRegistID	src/cusInfoAccess.c	/^int IsRegistID(char * ID)$/;"	f
+LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
+MAX_CUSTOMER	src/cusInfoAccess.c	/^#define MAX_CUSTOMER /;"	d	file:
+NAME_LEN	src/cusInfo.h	/^#define NAME_LEN /;"	d
+OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
+PHONE_LEN	src/cusInfo.h	/^#define PHONE_LEN /;"	d
+PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
+QUIT	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+RC_ERR	src/dbg.h	/^#define RC_ERR /;"	d
+RC_NRM	src/dbg.h	/^#define RC_NRM /;"	d
+RegistCustomer	src/cusManager.c	/^void RegistCustomer(void)$/;"	f
+SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
+SearchCusInfo	src/cusManager.c	/^void SearchCusInfo(void)$/;"	f
+ShowCustomerInfo	src/screenOut.c	/^void ShowCustomerInfo(cusInfo * pCus)$/;"	f
+ShowMenu	src/screenOut.c	/^void ShowMenu(void)$/;"	f
+__COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
+__CUSACCESS_H__	src/cusInfoAccess.h	/^#define __CUSACCESS_H__$/;"	d
+__CUSINFO_H__	src/cusInfo.h	/^#define __CUSINFO_H__$/;"	d
+__CUSMGR_H__	src/cusManager.h	/^#define __CUSMGR_H__$/;"	d
+__SCREENOUT_H__	src/screenOut.h	/^#define __SCREENOUT_H__$/;"	d
+__cusInfo	src/cusInfo.h	/^typedef struct __cusInfo $/;"	s
+__dbg_h__	src/dbg.h	/^#define __dbg_h__$/;"	d
+check	src/dbg.h	/^#define check(/;"	d
+check_debug	src/dbg.h	/^#define check_debug(/;"	d
+check_mem	src/dbg.h	/^#define check_mem(/;"	d
+clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
+cusInfo	src/cusInfo.h	/^} cusInfo;$/;"	t	typeref:struct:__cusInfo
+cusList	src/cusInfoAccess.c	/^static cusInfo * cusList[MAX_CUSTOMER];$/;"	v	file:
+debug	src/dbg.h	/^#define debug(/;"	d
+log_err	src/dbg.h	/^#define log_err(/;"	d
+log_info	src/dbg.h	/^#define log_info(/;"	d
+log_warn	src/dbg.h	/^#define log_warn(/;"	d
+main	src/main.c	/^int main(void)$/;"	f
+name	src/cusInfo.h	/^    char name[NAME_LEN];$/;"	m	struct:__cusInfo
+numOfCustomer	src/cusInfoAccess.c	/^static int numOfCustomer=0;$/;"	v	file:
+phoneNum	src/cusInfo.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__cusInfo
+sentinel	src/dbg.h	/^#define sentinel(/;"	d
