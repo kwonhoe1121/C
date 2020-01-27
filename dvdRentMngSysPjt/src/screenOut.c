@@ -11,7 +11,7 @@
 /* 프로그램 사용을 위한 메뉴 */
 void ShowMenu(void)
 {
-    system("cls");   //stdlib.h
+    //system("cls");   //stdlib.h
     
     printf("━━━━━ 메  뉴 ━━━━━━━ \n");
     printf(" 1. 신규가입 \n");

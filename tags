@@ -4,79 +4,98 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+AddCusInfo	dvdRentMngSysPjt/src/cusInfoAccess.c	/^int AddCusInfo(char * ID, char * name, char * num)$/;"	f
 CFLAGS	dbg/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CFLAGS	dbg/ex19/Makefile	/^CFLAGS=-Wall -g$/;"	m
 CFLAGS	dbg/ex20/Makefile	/^CFLAGS=-Wall -g$/;"	m
 CFLAGS	dvdRentMngSysPjt/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CFLAGS	managePhonNumPjt/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
 CFLAGS	rockScissorsPaperPjt/Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
-CHANGE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
+CHANGE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon5	file:
+CUS_REGIST	dvdRentMngSysPjt/src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+CUS_SEARCH	dvdRentMngSysPjt/src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
 ChangePhoneData	managePhonNumPjt/src/phoneFunc.c	/^void ChangePhoneData(void)$/;"	f
 ChoiceOfCom	rockScissorsPaperPjt/src/game.c	/^int ChoiceOfCom(void) $/;"	f
 ChoiceOfMe	rockScissorsPaperPjt/src/game.c	/^int ChoiceOfMe(void)$/;"	f
-DELETE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
-DRAW	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
+DELETE	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon5	file:
+DRAW	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon3
 DeletePhoneData	managePhonNumPjt/src/phoneFunc.c	/^void DeletePhoneData(void)$/;"	f
-EXIT	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
-INPUT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
+EXIT	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon2
+GetCusPtrByID	dvdRentMngSysPjt/src/cusInfoAccess.c	/^cusInfo * GetCusPtrByID(char * ID)$/;"	f
+ID	dvdRentMngSysPjt/src/cusInfo.h	/^    char ID[ID_LEN]; \/\/고유값 key $/;"	m	struct:__cusInfo
+ID_LEN	dvdRentMngSysPjt/src/cusInfo.h	/^#define ID_LEN /;"	d
+INPUT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon5	file:
 InputPhoneData	managePhonNumPjt/src/phoneFunc.c	/^void InputPhoneData(void)$/;"	f
+IsRegistID	dvdRentMngSysPjt/src/cusInfoAccess.c	/^int IsRegistID(char * ID)$/;"	f
 LIBS	dbg/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIBS	dvdRentMngSysPjt/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIBS	managePhonNumPjt/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIBS	rockScissorsPaperPjt/Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 LIST_NUM	managePhonNumPjt/src/phoneFunc.c	/^#define LIST_NUM /;"	d	file:
-LOSE	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
+LOSE	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon3
 LoadDataFromFile	managePhonNumPjt/src/phoneFunc.c	/^void LoadDataFromFile(void){$/;"	f
 LoadDataFromFileInStruct	managePhonNumPjt/src/phoneFunc.c	/^void LoadDataFromFileInStruct(void)$/;"	f
+MAX_CUSTOMER	dvdRentMngSysPjt/src/cusInfoAccess.c	/^#define MAX_CUSTOMER /;"	d	file:
+NAME_LEN	dvdRentMngSysPjt/src/cusInfo.h	/^#define NAME_LEN /;"	d
 NAME_LEN	managePhonNumPjt/src/phoneData.h	/^#define NAME_LEN /;"	d
-NRM_EXIT	rockScissorsPaperPjt/src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon3
+NRM_EXIT	rockScissorsPaperPjt/src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon4
 OBJECTS	dbg/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 OBJECTS	dvdRentMngSysPjt/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 OBJECTS	managePhonNumPjt/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 OBJECTS	rockScissorsPaperPjt/Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
-PAPER	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
+PAPER	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon2
+PHONE_LEN	dvdRentMngSysPjt/src/cusInfo.h	/^#define PHONE_LEN /;"	d
 PHONE_LEN	managePhonNumPjt/src/phoneData.h	/^#define PHONE_LEN /;"	d
 PREFIX	dbg/Makefile	/^PREFIX?=\/usr\/local$/;"	m
 PREFIX	dvdRentMngSysPjt/Makefile	/^PREFIX?=\/usr\/local$/;"	m
 PREFIX	managePhonNumPjt/Makefile	/^PREFIX?=\/usr\/local$/;"	m
 PREFIX	rockScissorsPaperPjt/Makefile	/^PREFIX?=\/usr\/local$/;"	m
-QUIT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
+QUIT	dvdRentMngSysPjt/src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+QUIT	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon5	file:
 RC_ERR	dbg/dbg.h	/^#define RC_ERR /;"	d
 RC_ERR	dvdRentMngSysPjt/src/dbg.h	/^#define RC_ERR /;"	d
 RC_ERR	rockScissorsPaperPjt/src/dbg.h	/^#define RC_ERR /;"	d
 RC_NRM	dbg/dbg.h	/^#define RC_NRM /;"	d
 RC_NRM	dvdRentMngSysPjt/src/dbg.h	/^#define RC_NRM /;"	d
 RC_NRM	rockScissorsPaperPjt/src/dbg.h	/^#define RC_NRM /;"	d
-ROCK	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
-SCISSORS	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon1
-SEARCH	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
-SHOWALL	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon4	file:
+ROCK	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon2
+RegistCustomer	dvdRentMngSysPjt/src/cusManager.c	/^void RegistCustomer(void)$/;"	f
+SCISSORS	rockScissorsPaperPjt/src/game.h	/^enum {SCISSORS=1, ROCK, PAPER, EXIT};$/;"	e	enum:__anon2
+SEARCH	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon5	file:
+SHOWALL	managePhonNumPjt/src/main.c	/^enum{INPUT=1, SHOWALL, SEARCH, DELETE, CHANGE, QUIT};$/;"	e	enum:__anon5	file:
 SOURCES	dbg/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SOURCES	dvdRentMngSysPjt/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SOURCES	managePhonNumPjt/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SOURCES	rockScissorsPaperPjt/Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
-STORE_EXIT	rockScissorsPaperPjt/src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon3
+STORE_EXIT	rockScissorsPaperPjt/src/gameContinue.h	/^enum {STORE_EXIT=1, NRM_EXIT};$/;"	e	enum:__anon4
+SearchCusInfo	dvdRentMngSysPjt/src/cusManager.c	/^void SearchCusInfo(void)$/;"	f
 SearchPhoneData	managePhonNumPjt/src/phoneFunc.c	/^void SearchPhoneData(void)$/;"	f
 ShowAllData	managePhonNumPjt/src/phoneFunc.c	/^void ShowAllData(void)$/;"	f
+ShowCustomerInfo	dvdRentMngSysPjt/src/screenOut.c	/^void ShowCustomerInfo(cusInfo * pCus)$/;"	f
+ShowMenu	dvdRentMngSysPjt/src/screenOut.c	/^void ShowMenu(void)$/;"	f
 ShowMenu	managePhonNumPjt/src/screenOut.c	/^void ShowMenu(void)$/;"	f
 ShowPhoneInfoByPtr	managePhonNumPjt/src/screenOut.c	/^void ShowPhoneInfoByPtr(phoneData * pPhone)$/;"	f
 ShowRSP	rockScissorsPaperPjt/src/game.c	/^void ShowRSP(int rsp)$/;"	f
 StoreDataToFile	managePhonNumPjt/src/phoneFunc.c	/^void StoreDataToFile(void){$/;"	f
 StoreDataToFileInStruct	managePhonNumPjt/src/phoneFunc.c	/^void StoreDataToFileInStruct(void)$/;"	f
-WIN	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon2
+WIN	rockScissorsPaperPjt/src/gameTimes.h	/^enum {WIN=1, LOSE, DRAW};$/;"	e	enum:__anon3
 WhoIsWinner	rockScissorsPaperPjt/src/game.c	/^void WhoIsWinner(int com, int you)$/;"	f
-__COMMOM_H__	common.h	/^#define __COMMOM_H__$/;"	d
 __COMMOM_H__	dbg/common.h	/^#define __COMMOM_H__$/;"	d
 __COMMOM_H__	dvdRentMngSysPjt/src/common.h	/^#define __COMMOM_H__$/;"	d
 __COMMOM_H__	managePhonNumPjt/src/common.h	/^#define __COMMOM_H__$/;"	d
 __COMMOM_H__	rockScissorsPaperPjt/src/common.h	/^#define __COMMOM_H__$/;"	d
+__CUSACCESS_H__	dvdRentMngSysPjt/src/cusInfoAccess.h	/^#define __CUSACCESS_H__$/;"	d
+__CUSINFO_H__	dvdRentMngSysPjt/src/cusInfo.h	/^#define __CUSINFO_H__$/;"	d
+__CUSMGR_H__	dvdRentMngSysPjt/src/cusManager.h	/^#define __CUSMGR_H__$/;"	d
 __GAME_CONTINUE_H__	rockScissorsPaperPjt/src/gameContinue.h	/^#define __GAME_CONTINUE_H__$/;"	d
 __GAME_H__	rockScissorsPaperPjt/src/game.h	/^#define __GAME_H__$/;"	d
 __GAME_MONEY_H__	rockScissorsPaperPjt/src/gameMoney.h	/^#define __GAME_MONEY_H__$/;"	d
 __GAME_TIMES_H__	rockScissorsPaperPjt/src/gameTimes.h	/^#define __GAME_TIMES_H__$/;"	d
 __PHONEDATA_H__	managePhonNumPjt/src/phoneData.h	/^#define __PHONEDATA_H__$/;"	d
 __PHONEFUNC_H__	managePhonNumPjt/src/phoneFunc.h	/^#define __PHONEFUNC_H__$/;"	d
+__SCREENOUT_H__	dvdRentMngSysPjt/src/screenOut.h	/^#define __SCREENOUT_H__$/;"	d
 __SCREENOUT_H__	managePhonNumPjt/src/screenOut.h	/^#define __SCREENOUT_H__$/;"	d
+__cusInfo	dvdRentMngSysPjt/src/cusInfo.h	/^typedef struct __cusInfo $/;"	s
 __dbg_h__	dbg/dbg.h	/^#define __dbg_h__$/;"	d
 __dbg_h__	dbg/ex19/dbg.h	/^#define __dbg_h__$/;"	d
 __dbg_h__	dbg/ex20/dbg.h	/^#define __dbg_h__$/;"	d
@@ -113,6 +132,8 @@ clean_errno	rockScissorsPaperPjt/src/dbg.h	/^#define clean_errno(/;"	d
 comMoney	rockScissorsPaperPjt/src/gameMoney.c	/^static int comMoney;$/;"	v	file:
 compare_cb	dbg/ex20/ex20.c	/^typedef int (*compare_cb) (int a, int b);$/;"	t	file:
 compare_cb	dbg/ex20/ex20_obo.c	/^typedef int (*compare_cb) (int a, int b);$/;"	t	file:
+cusInfo	dvdRentMngSysPjt/src/cusInfo.h	/^} cusInfo;$/;"	t	typeref:struct:__cusInfo
+cusList	dvdRentMngSysPjt/src/cusInfoAccess.c	/^static cusInfo * cusList[MAX_CUSTOMER];$/;"	v	file:
 debug	dbg/dbg.h	/^#define debug(/;"	d
 debug	dbg/ex19/dbg.h	/^#define debug(/;"	d
 debug	dbg/ex20/dbg.h	/^#define debug(/;"	d
@@ -160,12 +181,16 @@ lose	rockScissorsPaperPjt/src/gameTimes.c	/^static int lose = 0;$/;"	v	file:
 main	dbg/ex19/ex19.c	/^int main(int argc, char *argv[])$/;"	f
 main	dbg/ex20/ex20.c	/^int main(int argc, char *argv[])$/;"	f
 main	dbg/ex20/ex20_obo.c	/^int main(int argc, char *argv[])$/;"	f
+main	dvdRentMngSysPjt/src/main.c	/^int main(void)$/;"	f
 main	managePhonNumPjt/src/main.c	/^int main(void)$/;"	f
 main	rockScissorsPaperPjt/src/main.c	/^int main(void)$/;"	f
+name	dvdRentMngSysPjt/src/cusInfo.h	/^    char name[NAME_LEN];$/;"	m	struct:__cusInfo
 name	managePhonNumPjt/src/phoneData.h	/^    char name[NAME_LEN];$/;"	m	struct:__phoneData
+numOfCustomer	dvdRentMngSysPjt/src/cusInfoAccess.c	/^static int numOfCustomer=0;$/;"	v	file:
 numOfData	managePhonNumPjt/src/phoneFunc.c	/^int numOfData=0;$/;"	v
 phoneData	managePhonNumPjt/src/phoneData.h	/^} phoneData;$/;"	t	typeref:struct:__phoneData
 phoneList	managePhonNumPjt/src/phoneFunc.c	/^phoneData * phoneList[LIST_NUM]; \/\/구조체 포인터 배열 선언, 이 배열이 가지고 있는 타입이 포인터라는 의미이다.$/;"	v
+phoneNum	dvdRentMngSysPjt/src/cusInfo.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__cusInfo
 phoneNum	managePhonNumPjt/src/phoneData.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__phoneData
 ratio	rockScissorsPaperPjt/src/gameMoney.c	/^static int ratio;$/;"	v	file:
 recodeRst	rockScissorsPaperPjt/src/gameTimes.c	/^void recodeRst(int rst) $/;"	f

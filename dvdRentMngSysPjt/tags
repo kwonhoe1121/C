@@ -5,7 +5,7 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 AddCusInfo	src/cusInfoAccess.c	/^int AddCusInfo(char * ID, char * name, char * num)$/;"	f
-CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic -DNDEBUG $(OPTFLAGS)$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic $(OPTFLAGS)$/;"	m
 CUS_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
 CUS_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
 GetCusPtrByID	src/cusInfoAccess.c	/^cusInfo * GetCusPtrByID(char * ID)$/;"	f
@@ -20,10 +20,11 @@ PHONE_LEN	src/cusInfo.h	/^#define PHONE_LEN /;"	d
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
 QUIT	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
 RC_ERR	src/dbg.h	/^#define RC_ERR /;"	d
+RC_NFD	src/dbg.h	/^#define RC_NFD /;"	d
 RC_NRM	src/dbg.h	/^#define RC_NRM /;"	d
-RegistCustomer	src/cusManager.c	/^void RegistCustomer(void)$/;"	f
+RegistCustomer	src/cusManager.c	/^int RegistCustomer(void)$/;"	f
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
-SearchCusInfo	src/cusManager.c	/^void SearchCusInfo(void)$/;"	f
+SearchCusInfo	src/cusManager.c	/^int SearchCusInfo(void)$/;"	f
 ShowCustomerInfo	src/screenOut.c	/^void ShowCustomerInfo(cusInfo * pCus)$/;"	f
 ShowMenu	src/screenOut.c	/^void ShowMenu(void)$/;"	f
 __COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
@@ -38,7 +39,7 @@ check_debug	src/dbg.h	/^#define check_debug(/;"	d
 check_mem	src/dbg.h	/^#define check_mem(/;"	d
 clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
 cusInfo	src/cusInfo.h	/^} cusInfo;$/;"	t	typeref:struct:__cusInfo
-cusList	src/cusInfoAccess.c	/^static cusInfo * cusList[MAX_CUSTOMER];$/;"	v	file:
+cusList	src/cusInfoAccess.c	/^static cusInfo * cusList[MAX_CUSTOMER]; \/\/구조체 포인터 배열임을 유의한다.$/;"	v	file:
 debug	src/dbg.h	/^#define debug(/;"	d
 log_err	src/dbg.h	/^#define log_err(/;"	d
 log_info	src/dbg.h	/^#define log_info(/;"	d

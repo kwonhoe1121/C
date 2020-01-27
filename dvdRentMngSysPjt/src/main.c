@@ -14,12 +14,13 @@ enum{CUS_REGIST=1, CUS_SEARCH, QUIT};
 int main(void)
 {
     int inputMenu = 0;
+    int rc;
     
     while(1)
     {
         ShowMenu();
         scanf("%d", &inputMenu);
-        fflush(stdin);
+        //fflush(stdin);
   		        
         switch(inputMenu)
         {
@@ -39,7 +40,11 @@ int main(void)
         }
     }    
 
-    return 0;
+    return RC_NRM;
+
+error:
+    
+    return RC_ERR;
 }
 
 /* end of file */

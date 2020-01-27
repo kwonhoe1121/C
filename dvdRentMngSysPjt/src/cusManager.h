@@ -8,8 +8,8 @@
 #ifndef __CUSMGR_H__
 #define __CUSMGR_H__
 
-void RegistCustomer(void);
-void SearchCusInfo(void);
+int RegistCustomer(void);
+int SearchCusInfo(void);
 
 #endif
 

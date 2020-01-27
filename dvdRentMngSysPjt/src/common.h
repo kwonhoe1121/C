@@ -1,8 +1,8 @@
 /* Name: common.h  ver 1.0
  * Content: 공통 ANSI 표준 헤더.
- * Implementation: YSW
+ * Implementation: KJJ
  * 
- * Last modified 2008/01/01
+ * Last modified 2020/01/27
  */
 
 #ifndef __COMMOM_H__
