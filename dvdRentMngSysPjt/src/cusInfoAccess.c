@@ -19,12 +19,13 @@ static int numOfCustomer=0;
  */
 int AddCusInfo(char * ID, char * name, char * num)
 {
-    if(numOfCustomer + 1 > MAX_CUSTOMER)
+    if(numOfCustomer >= MAX_CUSTOMER)
         return RC_ERR;
 
     cusList[numOfCustomer] = (cusInfo*)malloc(sizeof(cusInfo));
     check(cusList[numOfCustomer] != NULL, "cusList[%d] memory allocation failed!!", numOfCustomer);
 
+    memset(cusList[numOfCustomer], 0x00, sizeof(cusInfo)); //memset으로 초기화 해주지 않으면 segmentation 오류 발생.
     memcpy(cusList[numOfCustomer]->ID, ID, ID_LEN);
     memcpy(cusList[numOfCustomer]->name, name, NAME_LEN);
     memcpy(cusList[numOfCustomer]->phoneNum, num, PHONE_LEN);
@@ -65,14 +66,16 @@ cusInfo * GetCusPtrByID(char * ID)
  */
 int IsRegistID(char * ID)
 {
-    int i;
-
-    for(i=0; i<numOfCustomer; i+=1)
-    {
-        if(strcmp(ID, cusList[i]->ID) == 0) {
-            return RC_NRM;
-        }
-    }
+//    int i;
+//
+//    for(i=0; i<numOfCustomer; i+=1)
+//    {
+//        if(strcmp(ID, cusList[i]->ID) == 0) {
+//            return RC_NRM;
+//        }
+//    }
+    if(GetCusPtrByID(ID))
+        return RC_NRM;
 
     return RC_NFD;
 }

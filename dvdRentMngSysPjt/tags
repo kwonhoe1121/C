@@ -4,36 +4,59 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+ACTION	src/dvdInfo.h	/^enum {ACTION=1, COMIC, SF, ROMANTIC};    \/\/ 장르 정보$/;"	e	enum:__anon1
 AddCusInfo	src/cusInfoAccess.c	/^int AddCusInfo(char * ID, char * name, char * num)$/;"	f
+AddDvdInfo	src/dvdInfoAccess.c	/^int AddDvdInfo (char * ISBN, char * title, int genre)$/;"	f
 CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic $(OPTFLAGS)$/;"	m
-CUS_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
-CUS_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+COMIC	src/dvdInfo.h	/^enum {ACTION=1, COMIC, SF, ROMANTIC};    \/\/ 장르 정보$/;"	e	enum:__anon1
+CUS_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, QUIT};$/;"	e	enum:__anon3	file:
+CUS_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, QUIT};$/;"	e	enum:__anon3	file:
+DVD_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, QUIT};$/;"	e	enum:__anon3	file:
+DVD_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, QUIT};$/;"	e	enum:__anon3	file:
 GetCusPtrByID	src/cusInfoAccess.c	/^cusInfo * GetCusPtrByID(char * ID)$/;"	f
+GetDvdPtrByISBN	src/dvdInfoAccess.c	/^dvdInfo * GetDvdPtrByISBN(char * ISBN)$/;"	f
 ID	src/cusInfo.h	/^    char ID[ID_LEN]; \/\/고유값 key $/;"	m	struct:__cusInfo
 ID_LEN	src/cusInfo.h	/^#define ID_LEN /;"	d
+ISBN	src/dvdInfo.h	/^    char ISBN[ISBN_LEN];$/;"	m	struct:__dvdInfo
+ISBN_LEN	src/dvdInfo.h	/^#define ISBN_LEN /;"	d
 IsRegistID	src/cusInfoAccess.c	/^int IsRegistID(char * ID)$/;"	f
+IsRegistISBN	src/dvdInfoAccess.c	/^int IsRegistISBN(char * ISBN)$/;"	f
 LIBS	Makefile	/^LIBS=-ldl $(OPTLIBS)$/;"	m
 MAX_CUSTOMER	src/cusInfoAccess.c	/^#define MAX_CUSTOMER /;"	d	file:
+MAX_DVD	src/dvdInfoAccess.c	/^#define MAX_DVD /;"	d	file:
 NAME_LEN	src/cusInfo.h	/^#define NAME_LEN /;"	d
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 PHONE_LEN	src/cusInfo.h	/^#define PHONE_LEN /;"	d
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
-QUIT	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, QUIT};$/;"	e	enum:__anon1	file:
+QUIT	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, QUIT};$/;"	e	enum:__anon3	file:
+RC_DUP	src/dbg.h	/^#define RC_DUP /;"	d
 RC_ERR	src/dbg.h	/^#define RC_ERR /;"	d
 RC_NFD	src/dbg.h	/^#define RC_NFD /;"	d
 RC_NRM	src/dbg.h	/^#define RC_NRM /;"	d
+RENTED	src/dvdInfo.h	/^enum {RENTED, RETURNED};    \/\/ 대여 상태를 나타내는 상수!$/;"	e	enum:__anon2
+RETURNED	src/dvdInfo.h	/^enum {RENTED, RETURNED};    \/\/ 대여 상태를 나타내는 상수!$/;"	e	enum:__anon2
+ROMANTIC	src/dvdInfo.h	/^enum {ACTION=1, COMIC, SF, ROMANTIC};    \/\/ 장르 정보$/;"	e	enum:__anon1
 RegistCustomer	src/cusManager.c	/^int RegistCustomer(void)$/;"	f
+RegistDvd	src/dvdManger.c	/^int RegistDvd(void)$/;"	f
+SF	src/dvdInfo.h	/^enum {ACTION=1, COMIC, SF, ROMANTIC};    \/\/ 장르 정보$/;"	e	enum:__anon1
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SearchCusInfo	src/cusManager.c	/^int SearchCusInfo(void)$/;"	f
+SearchDvdInfo	src/dvdManger.c	/^int SearchDvdInfo(void)$/;"	f
 ShowCustomerInfo	src/screenOut.c	/^void ShowCustomerInfo(cusInfo * pCus)$/;"	f
+ShowDvdInfo	src/screenOut.c	/^void ShowDvdInfo(dvdInfo * pDvd)$/;"	f
 ShowMenu	src/screenOut.c	/^void ShowMenu(void)$/;"	f
+TITLE_LEN	src/dvdInfo.h	/^#define TITLE_LEN /;"	d
 __COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
 __CUSACCESS_H__	src/cusInfoAccess.h	/^#define __CUSACCESS_H__$/;"	d
 __CUSINFO_H__	src/cusInfo.h	/^#define __CUSINFO_H__$/;"	d
 __CUSMGR_H__	src/cusManager.h	/^#define __CUSMGR_H__$/;"	d
+__DVDACCESS_H__	src/dvdInfoAccess.h	/^#define __DVDACCESS_H__$/;"	d
+__DVDINFO_H__	src/dvdInfo.h	/^#define __DVDINFO_H__$/;"	d
+__DVDMGR_H__	src/dvdManager.h	/^#define __DVDMGR_H__$/;"	d
 __SCREENOUT_H__	src/screenOut.h	/^#define __SCREENOUT_H__$/;"	d
 __cusInfo	src/cusInfo.h	/^typedef struct __cusInfo $/;"	s
 __dbg_h__	src/dbg.h	/^#define __dbg_h__$/;"	d
+__dvdInfo	src/dvdInfo.h	/^typedef struct __dvdInfo $/;"	s
 check	src/dbg.h	/^#define check(/;"	d
 check_debug	src/dbg.h	/^#define check_debug(/;"	d
 check_mem	src/dbg.h	/^#define check_mem(/;"	d
@@ -41,11 +64,17 @@ clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
 cusInfo	src/cusInfo.h	/^} cusInfo;$/;"	t	typeref:struct:__cusInfo
 cusList	src/cusInfoAccess.c	/^static cusInfo * cusList[MAX_CUSTOMER]; \/\/구조체 포인터 배열임을 유의한다.$/;"	v	file:
 debug	src/dbg.h	/^#define debug(/;"	d
+dvdInfo	src/dvdInfo.h	/^}dvdInfo;$/;"	t	typeref:struct:__dvdInfo
+dvdList	src/dvdInfoAccess.c	/^static dvdInfo * dvdList[MAX_DVD]; \/\/구조체 포인터 배열임을 유의한다.$/;"	v	file:
+genre	src/dvdInfo.h	/^    int genre;$/;"	m	struct:__dvdInfo
 log_err	src/dbg.h	/^#define log_err(/;"	d
 log_info	src/dbg.h	/^#define log_info(/;"	d
 log_warn	src/dbg.h	/^#define log_warn(/;"	d
 main	src/main.c	/^int main(void)$/;"	f
 name	src/cusInfo.h	/^    char name[NAME_LEN];$/;"	m	struct:__cusInfo
 numOfCustomer	src/cusInfoAccess.c	/^static int numOfCustomer=0;$/;"	v	file:
+numOfDvd	src/dvdInfoAccess.c	/^static int numOfDvd=0;$/;"	v	file:
 phoneNum	src/cusInfo.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__cusInfo
 sentinel	src/dbg.h	/^#define sentinel(/;"	d
+showGenre	src/screenOut.c	/^void showGenre(int gen)$/;"	f
+title	src/dvdInfo.h	/^    char title[TITLE_LEN];$/;"	m	struct:__dvdInfo

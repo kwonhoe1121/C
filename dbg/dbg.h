@@ -44,8 +44,10 @@
 #include <string.h>
 
 /* 모든 함수가 일관된 오류 코드를 반환하도록 한다. */
+#define RC_NRM  0
 #define RC_ERR -1
-#define RC_NRM 0
+#define RC_NFD -2
+#define RC_DUP -3
 
 /* NDEBUG가 정의 되어 있으면 debug() 메시지 남기지 않는다. 정의하고 싶으면 맨 위에 #define 해서 정의한다.
  * M은 출력 format이고, ...는 format에 있는 서식문자를 채울 가변 인자들이 온다. ... 와, ##__VA_ARGS__ 세트

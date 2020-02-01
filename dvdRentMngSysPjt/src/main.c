@@ -7,9 +7,10 @@
 
 #include "common.h"
 #include "cusManager.h"
+#include "dvdManager.h"
 #include "screenOut.h"
 
-enum{CUS_REGIST=1, CUS_SEARCH, QUIT};
+enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, QUIT};
 
 int main(void)
 {
@@ -31,10 +32,19 @@ int main(void)
         case CUS_SEARCH:
             SearchCusInfo();
             break;
+            
+        case DVD_REGIST:
+            RegistDvd();
+            break;
+
+        case DVD_SEARCH:
+            SearchDvdInfo();
+            break;
         }
         
         if(inputMenu==QUIT)
         {
+            //동적할당 메모리 해제해줘야 한다.
             puts("이용해 주셔서 고마워요~");
             break;
         }

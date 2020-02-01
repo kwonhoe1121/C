@@ -22,6 +22,7 @@ int RegistCustomer(void)
 
     enrCus = (cusInfo*)malloc(sizeof(cusInfo));
     check(enrCus != NULL, "Memory allocate failed in RegistCustomer()");
+    memset(enrCus, 0x00, sizeof(cusInfo));
 
     fputs("ID 입력: ", stdout);
     scanf("%s", enrCus->ID);
@@ -30,7 +31,7 @@ int RegistCustomer(void)
 
     if(rc == RC_NRM) {
         puts("해당 ID는 사용 중에 있습니다. 다른 ID를 선택해주세요!");
-        return RC_ERR;
+        return RC_DUP;
     }
 
     fputs("이름 입력 : ", stdout);
@@ -38,7 +39,12 @@ int RegistCustomer(void)
     fputs("전화번호 입력 : ", stdout);
     scanf("%s", enrCus->phoneNum);
 
-    AddCusInfo(enrCus->ID, enrCus->name, enrCus->phoneNum);
+    rc = AddCusInfo(enrCus->ID, enrCus->name, enrCus->phoneNum);
+    if(rc == RC_NRM) {
+        puts("해당 ID 저장에 실패하였습니다!"); 
+        return RC_ERR;
+    }
+
     puts("가입이 완료되었습니다.");
 
     return RC_NRM;
