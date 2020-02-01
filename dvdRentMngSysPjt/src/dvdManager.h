@@ -11,6 +11,10 @@
 int SearchDvdInfo(void);
 int RegistDvd(void);
 
+int rentDvd(void);
+int returnDvd(void);
+int showAllRntHis(void);
+
 #endif
 
 /* end of file */

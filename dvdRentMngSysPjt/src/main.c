@@ -10,12 +10,12 @@
 #include "dvdManager.h"
 #include "screenOut.h"
 
-enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, QUIT};
+enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};
 
 int main(void)
 {
     int inputMenu = 0;
-    int rc;
+    int rc = RC_NRM;
     
     while(1)
     {
@@ -40,6 +40,18 @@ int main(void)
         case DVD_SEARCH:
             SearchDvdInfo();
             break;
+
+        case DVD_RENT:
+            rentDvd();
+            break;
+
+        case DVD_RETURN:
+            returnDvd();
+            break;
+            
+        case DVD_HIST:
+            showAllRntHis();
+            break;
         }
         
         if(inputMenu==QUIT)
@@ -50,7 +62,7 @@ int main(void)
         }
     }    
 
-    return RC_NRM;
+    return rc;
 
 error:
     

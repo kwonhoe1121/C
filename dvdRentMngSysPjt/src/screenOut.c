@@ -22,7 +22,11 @@ void ShowMenu(void)
     printf(" 3. DVD 등록 \n");
     printf(" 4. DVD 검색 \n");
     printf("-------------------- \n");
-    printf(" 5. 종료 \n");
+    printf(" 5. DVD 대여 \n");
+    printf(" 6. DVD 반납 \n");
+    printf("-------------------- \n");
+    printf(" 7. DVD 대여고객 전체 조회 \n");
+    printf(" 8. 종료 \n");
     printf("━━━━━━━━━━━━━━━━━━━━ \n");
     printf("선택》 ");
 }
@@ -46,9 +50,7 @@ void ShowDvdInfo(dvdInfo * pDvd)
     printf("┏━━━━━━━━━━━━━━━━ \n");
     printf("┃ ▶ ISBN: %s \n", pDvd->ISBN);
     printf("┃ ▶ 타이틀: %s \n", pDvd->title);
-    printf("┃ ▶ 장르: "); 
-    showGenre(pDvd->genre);
-    printf("\n");
+    printf("┃ ▶ 장르: "); showGenre(pDvd->genre);
     printf("┗━━━━━━━━━━━━━━━━ \n\n");
     
     getchar(); // 키 입력시 넘어가기 위해서..
