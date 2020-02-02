@@ -7,6 +7,7 @@
 #include "common.h"
 #include "dvdInfo.h"
 #include "dvdInfoAccess.h"
+#include "rentInfoAccess.h"
 
 #define MAX_DVD  100
 
@@ -32,7 +33,7 @@ int AddDvdInfo (char * ISBN, char * title, int genre)
     memcpy(&dvdList[numOfDvd]->genre, &genre, sizeof(genre));
 
     dvdList[numOfDvd]->rentState = RETURNED; 
-    dvdList[numOfDvd]->numOfRentCus = 0;
+    //dvdList[numOfDvd]->numOfRentCus = 0;
 
     return ++numOfDvd;
 
@@ -44,30 +45,31 @@ error:
     return RC_ERR;
 }
 
-/* 함    수: int setDvdRentedInfo(char * isbn, char * id, unsigned char rntDay)
- * 기    능: 대여된 dvd 정보 설정 함수
+/* 함    수: int setDvdRentedInfo(char * isbn)
+ * 기    능: 대여된 dvd 대여 상태 설정 함수
  * 반    환: int
  *
  */
-int setDvdRentedInfo(char * isbn, char * id, unsigned char rntDay)
+int setDvdRentedState(char * isbn)
 {
     dvdInfo * slctDvd;
     int rc;
 
     slctDvd = GetDvdPtrByISBN(isbn);
-    if(slctDvd) return RC_ERR;
+    if(!slctDvd) return RC_ERR;
 
-   if(slctDvd->numOfRentCus >= RENT_LEN) {
-        fputs("등록된 대여 정보의 개수를 초과하여 대여 정보를 기록할 수 없습니다.\n", stdout);
-        return RC_ERR;
-    }
-    debug("id is %s", id);
-    debug("rntDay is %d", rntDay);
+//   if(slctDvd->numOfRentCus >= RENT_LEN) {
+//        fputs("등록된 대여 정보의 개수를 초과하여 대여 정보를 기록할 수 없습니다.\n", stdout);
+//        return RC_ERR;
+//    }
+//    debug("id is %s", id);
+//    debug("rntDay is %d", rntDay);
+//    slctDvd->rentState = RENTED;
+//    //slctDvd->rentList[slctDvd->numOfRentCus] = *rentDvdInfo;
+//    memcpy(slctDvd->rentList[slctDvd->numOfRentCus].cusID, id, ID_LEN);
+//    slctDvd->rentList[slctDvd->numOfRentCus].rentDay = rntDay;
+//    slctDvd->numOfRentCus++;
     slctDvd->rentState = RENTED;
-    //slctDvd->rentList[slctDvd->numOfRentCus] = *rentDvdInfo;
-    memcpy(slctDvd->rentList[slctDvd->numOfRentCus].cusID, id, ID_LEN);
-    slctDvd->rentList[slctDvd->numOfRentCus].rentDay = rntDay;
-    slctDvd->numOfRentCus++;
 
     return RC_NRM;
 
@@ -86,7 +88,7 @@ int setDvdRented(char * isbn)
     int rc;
 
     slctDvd = GetDvdPtrByISBN(isbn);
-    if(slctDvd) return RC_ERR;
+    if(!slctDvd) return RC_ERR;
 
     slctDvd->rentState = RETURNED;
 

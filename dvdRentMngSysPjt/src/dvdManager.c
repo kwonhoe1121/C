@@ -7,8 +7,10 @@
 
 #include "common.h"
 #include "dvdInfo.h"
+#include "rentInfo.h"
 #include "dvdInfoAccess.h"
 #include "cusInfoAccess.h"
+#include "rentInfoAccess.h"
 #include "screenOut.h"
 #include "dvdManager.h"
 
@@ -133,16 +135,21 @@ int rentDvd(void)
         return RC_NFD;
     }
 
-    if(schDvdInfo->numOfRentCus >= RENT_LEN) {
-        fputs("등록된 대여 정보의 개수를 초과하여 대여 정보를 기록할 수 없습니다.\n", stdout);
-        return RC_ERR;
-    }
-    schDvdInfo->rentState = RENTED;
-    //schDvdInfo->rentList[schDvdInfo->numOfRentCus] = *rentDvdInfo;
-    memcpy(schDvdInfo->rentList[schDvdInfo->numOfRentCus].cusID, rentDvdInfo->cusID, ID_LEN);
-    schDvdInfo->rentList[schDvdInfo->numOfRentCus].rentDay = rentDvdInfo->rentDay;
-    schDvdInfo->numOfRentCus++;
-//    setDvdRentedInfo(schIsbn, rentDvdInfo->cusID, rentDvdInfo->rentDay);
+//    if(schDvdInfo->numOfRentCus >= RENT_LEN) {
+//        fputs("등록된 대여 정보의 개수를 초과하여 대여 정보를 기록할 수 없습니다.\n", stdout);
+//        return RC_ERR;
+//    }
+//    schDvdInfo->rentState = RENTED;
+//    //schDvdInfo->rentList[schDvdInfo->numOfRentCus] = *rentDvdInfo;
+//    memcpy(schDvdInfo->rentList[schDvdInfo->numOfRentCus].cusID, rentDvdInfo->cusID, ID_LEN);
+//    schDvdInfo->rentList[schDvdInfo->numOfRentCus].rentDay = rentDvdInfo->rentDay;
+//    schDvdInfo->numOfRentCus++;
+//    schDvdInfo->rentState = RENTED;
+//    AddRentList(schIsbn, rentDvdInfo->cusID, rentDvdInfo->rentDay);
+
+    setDvdRentedState(schIsbn);
+
+    AddRentList(schIsbn, rentDvdInfo->cusID, rentDvdInfo->rentDay);
 
     free(rentDvdInfo);
     rentDvdInfo = NULL;
@@ -204,12 +211,12 @@ error:
 
 
 
-/* 함    수: int showAllRntHis(void)
+/* 함    수: int showAllRntDvdHis(void)
  * 기    능: dvd 대여 히스토리 출력 함수.
  * 반    환: int
  * 
  */
-int showAllRntHis(void)
+int showAllRntDvdHis(void)
 {
     char schIsbn[ISBN_LEN];
     dvdInfo * dvdInfo;
@@ -228,11 +235,14 @@ int showAllRntHis(void)
     dvdInfo = GetDvdPtrByISBN(schIsbn);
     if(!dvdInfo) return RC_ERR;
 
-    for(i = 0; i < dvdInfo->numOfRentCus; i+=1)
-    {
-        printf("대여일: %d \n", dvdInfo->rentList[i].rentDay);
-        ShowCustomerInfo(GetCusPtrByID(dvdInfo->rentList[i].cusID));
-    } 
+//    for(i = 0; i < dvdInfo->numOfRentCus; i+=1)
+//    {
+//        printf("대여일: %d \n", dvdInfo->rentList[i].rentDay);
+//        ShowCustomerInfo(GetCusPtrByID(dvdInfo->rentList[i].cusID));
+//    } 
+
+    PrintOutRentAllCusInfo(schIsbn);
+
     puts("조회를 완료하였습니다.");
     puts("");
 
@@ -240,5 +250,45 @@ int showAllRntHis(void)
 error:
     return RC_ERR;
 }
+
+/* 함    수: int showAllRntCusHis(void)
+ * 기    능: 기간 내에 선택된 고객이 대여한 기록 출력
+ * 반    환: int
+ * 
+ */
+int showAllRntCusHis(void)
+{
+    char schId[ID_LEN];
+    unsigned int startRentDay;
+    unsigned int endRentDay;
+    int rc;
+
+    fputs("찾는 ID 입력: ", stdout);
+    scanf("%s", schId);
+    fputs("대여 기간 입력: ", stdout);
+    scanf("%d%d", &startRentDay, &endRentDay);
+    
+    rc = IsRegistID(schId);
+    if(rc == RC_NFD) {
+        fputs("해당 아이디는 등록되어 있지 않습니다. \n", stdout);
+        return RC_NFD;
+    }
+
+    if(startRentDay > endRentDay) {
+        fputs("유효하지 않은 기간 정보입니다.\n", stdout);
+        return RC_ERR;
+    }
+
+    PrintOutCusAllRentInfo(schId, startRentDay, endRentDay);
+
+    puts("조회를 완료하였습니다.");
+    puts("");
+
+    return RC_NRM;
+
+error:
+    return RC_ERR;
+}
+
 
 /* end of file */

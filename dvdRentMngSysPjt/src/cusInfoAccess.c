@@ -74,7 +74,7 @@ int IsRegistID(char * ID)
 //            return RC_NRM;
 //        }
 //    }
-    if(GetCusPtrByID(ID))
+    if(!GetCusPtrByID(ID))
         return RC_NRM;
 
     return RC_NFD;

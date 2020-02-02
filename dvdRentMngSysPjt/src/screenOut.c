@@ -8,6 +8,7 @@
 #include "common.h"
 #include "cusInfo.h"
 #include "dvdInfo.h"
+#include "rentInfo.h"
 #include "screenOut.h" // 함수 내에서 함수 정의된 순서에 상관없이 함수들을 호출하고 싶으면 해당 해더파일도 추가해야한다.
 
 /* 프로그램 사용을 위한 메뉴 */
@@ -26,7 +27,9 @@ void ShowMenu(void)
     printf(" 6. DVD 반납 \n");
     printf("-------------------- \n");
     printf(" 7. DVD 대여고객 전체 조회 \n");
-    printf(" 8. 종료 \n");
+    printf(" 8. 고객 대여 DVD 전체 조회 \n");
+    printf("-------------------- \n");
+    printf(" 9. 종료 \n");
     printf("━━━━━━━━━━━━━━━━━━━━ \n");
     printf("선택》 ");
 }
@@ -41,7 +44,7 @@ void ShowCustomerInfo(cusInfo * pCus)
     printf("┃ ▶ 전화번호: %s \n", pCus->phoneNum);
     printf("┗━━━━━━━━━━━━━━━━ \n\n");
     
-    getchar(); // 키 입력시 넘어가기 위해서..
+    //getchar(); // 키 입력시 넘어가기 위해서..
 }
 
 /* DVD 기본 정보 출력 */
@@ -53,7 +56,18 @@ void ShowDvdInfo(dvdInfo * pDvd)
     printf("┃ ▶ 장르: "); showGenre(pDvd->genre);
     printf("┗━━━━━━━━━━━━━━━━ \n\n");
     
-    getchar(); // 키 입력시 넘어가기 위해서..
+    //getchar(); // 키 입력시 넘어가기 위해서..
+}
+
+/* DVD 대여 정보 출력 */
+void ShowRentDayInfo(dvdRentInfo * pRnt)
+{    
+    printf("┏━━━━━━━━━━━━━━━━ \n");
+    printf("┃ ▶ ISBN: %s \n", pRnt->ISBN);
+    printf("┃ ▶ 대여일: %d \n", pRnt->rentDay);
+    printf("┗━━━━━━━━━━━━━━━━ \n\n");
+    
+    //getchar(); // 키 입력시 넘어가기 위해서..
 }
 
 void showGenre(int gen)

@@ -7,20 +7,23 @@
 ACTION	src/dvdInfo.h	/^enum {ACTION=1, COMIC, SF, ROMANTIC};    \/\/ 장르 정보$/;"	e	enum:__anon1
 AddCusInfo	src/cusInfoAccess.c	/^int AddCusInfo(char * ID, char * name, char * num)$/;"	f
 AddDvdInfo	src/dvdInfoAccess.c	/^int AddDvdInfo (char * ISBN, char * title, int genre)$/;"	f
+AddRentList	src/rentInfoAccess.c	/^void AddRentList(char * ISBN, char * cusID, int rentDay)$/;"	f
 CFLAGS	Makefile	/^CFLAGS=-g -O2 -Wall -Wextra -Isrc -rdynamic $(OPTFLAGS)$/;"	m
 COMIC	src/dvdInfo.h	/^enum {ACTION=1, COMIC, SF, ROMANTIC};    \/\/ 장르 정보$/;"	e	enum:__anon1
-CUS_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};$/;"	e	enum:__anon3	file:
-CUS_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};$/;"	e	enum:__anon3	file:
-DVD_HIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};$/;"	e	enum:__anon3	file:
-DVD_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};$/;"	e	enum:__anon3	file:
-DVD_RENT	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};$/;"	e	enum:__anon3	file:
-DVD_RETURN	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};$/;"	e	enum:__anon3	file:
-DVD_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};$/;"	e	enum:__anon3	file:
+CUS_HIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
+CUS_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
+CUS_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
+DVD_HIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
+DVD_REGIST	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
+DVD_RENT	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
+DVD_RETURN	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
+DVD_SEARCH	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
 GetCusPtrByID	src/cusInfoAccess.c	/^cusInfo * GetCusPtrByID(char * ID)$/;"	f
 GetDvdPtrByISBN	src/dvdInfoAccess.c	/^dvdInfo * GetDvdPtrByISBN(char * ISBN)$/;"	f
 ID	src/cusInfo.h	/^    char ID[ID_LEN]; \/\/고유값 key $/;"	m	struct:__cusInfo
 ID_LEN	src/cusInfo.h	/^#define ID_LEN /;"	d
 ISBN	src/dvdInfo.h	/^    char ISBN[ISBN_LEN];$/;"	m	struct:__dvdInfo
+ISBN	src/rentInfo.h	/^    char ISBN[ISBN_LEN];   \/\/ 대여 dvd 정보 $/;"	m	struct:__dvdRentInfo
 ISBN_LEN	src/dvdInfo.h	/^#define ISBN_LEN /;"	d
 IsRegistID	src/cusInfoAccess.c	/^int IsRegistID(char * ID)$/;"	f
 IsRegistISBN	src/dvdInfoAccess.c	/^int IsRegistISBN(char * ISBN)$/;"	f
@@ -31,13 +34,16 @@ NAME_LEN	src/cusInfo.h	/^#define NAME_LEN /;"	d
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
 PHONE_LEN	src/cusInfo.h	/^#define PHONE_LEN /;"	d
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
-QUIT	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, QUIT};$/;"	e	enum:__anon3	file:
+PrintOutCusAllRentInfo	src/rentInfoAccess.c	/^void PrintOutCusAllRentInfo   \/\/RentInfo, 대여 정보 출력$/;"	f
+PrintOutRentAllCusInfo	src/rentInfoAccess.c	/^void PrintOutRentAllCusInfo(char * ISBN)   \/\/ CusInfo, 고객 정보 출력$/;"	f
+QUIT	src/main.c	/^enum{CUS_REGIST=1, CUS_SEARCH, DVD_REGIST, DVD_SEARCH, DVD_RENT, DVD_RETURN,  DVD_HIST, CUS_HIST, QUIT};$/;"	e	enum:__anon3	file:
 RC_DUP	src/dbg.h	/^#define RC_DUP /;"	d
 RC_ERR	src/dbg.h	/^#define RC_ERR /;"	d
 RC_NFD	src/dbg.h	/^#define RC_NFD /;"	d
 RC_NRM	src/dbg.h	/^#define RC_NRM /;"	d
 RENTED	src/dvdInfo.h	/^enum {RENTED, RETURNED};    \/\/ 대여 상태를 나타내는 상수!$/;"	e	enum:__anon2
 RENT_LEN	src/dvdInfo.h	/^#define RENT_LEN /;"	d
+RENT_LEN	src/rentInfoAccess.c	/^#define RENT_LEN /;"	d	file:
 RETURNED	src/dvdInfo.h	/^enum {RENTED, RETURNED};    \/\/ 대여 상태를 나타내는 상수!$/;"	e	enum:__anon2
 ROMANTIC	src/dvdInfo.h	/^enum {ACTION=1, COMIC, SF, ROMANTIC};    \/\/ 장르 정보$/;"	e	enum:__anon1
 RegistCustomer	src/cusManager.c	/^int RegistCustomer(void)$/;"	f
@@ -49,6 +55,7 @@ SearchDvdInfo	src/dvdManager.c	/^int SearchDvdInfo(void)$/;"	f
 ShowCustomerInfo	src/screenOut.c	/^void ShowCustomerInfo(cusInfo * pCus)$/;"	f
 ShowDvdInfo	src/screenOut.c	/^void ShowDvdInfo(dvdInfo * pDvd)$/;"	f
 ShowMenu	src/screenOut.c	/^void ShowMenu(void)$/;"	f
+ShowRentDayInfo	src/screenOut.c	/^void ShowRentDayInfo(dvdRentInfo * pRnt)$/;"	f
 TITLE_LEN	src/dvdInfo.h	/^#define TITLE_LEN /;"	d
 __COMMOM_H__	src/common.h	/^#define __COMMOM_H__$/;"	d
 __CUSACCESS_H__	src/cusInfoAccess.h	/^#define __CUSACCESS_H__$/;"	d
@@ -57,22 +64,24 @@ __CUSMGR_H__	src/cusManager.h	/^#define __CUSMGR_H__$/;"	d
 __DVDACCESS_H__	src/dvdInfoAccess.h	/^#define __DVDACCESS_H__$/;"	d
 __DVDINFO_H__	src/dvdInfo.h	/^#define __DVDINFO_H__$/;"	d
 __DVDMGR_H__	src/dvdManager.h	/^#define __DVDMGR_H__$/;"	d
+__RENTINFO_H__	src/rentInfo.h	/^#define __RENTINFO_H__$/;"	d
+__RENT_DVDACCESS_H__	src/rentInfoAccess.h	/^#define __RENT_DVDACCESS_H__ /;"	d
 __SCREENOUT_H__	src/screenOut.h	/^#define __SCREENOUT_H__$/;"	d
 __cusInfo	src/cusInfo.h	/^typedef struct __cusInfo $/;"	s
 __dbg_h__	src/dbg.h	/^#define __dbg_h__$/;"	d
 __dvdInfo	src/dvdInfo.h	/^typedef struct __dvdInfo $/;"	s
-__dvdRentInfo	src/dvdInfo.h	/^typedef struct __dvdRentInfo$/;"	s
+__dvdRentInfo	src/rentInfo.h	/^typedef struct __dvdRentInfo $/;"	s
 check	src/dbg.h	/^#define check(/;"	d
 check_debug	src/dbg.h	/^#define check_debug(/;"	d
 check_mem	src/dbg.h	/^#define check_mem(/;"	d
 clean_errno	src/dbg.h	/^#define clean_errno(/;"	d
-cusID	src/dvdInfo.h	/^    char cusID[ID_LEN]; \/\/ 대여 고객 ID$/;"	m	struct:__dvdRentInfo
+cusID	src/rentInfo.h	/^    char cusID[ID_LEN];    \/\/ 대여 고객 ID$/;"	m	struct:__dvdRentInfo
 cusInfo	src/cusInfo.h	/^} cusInfo;$/;"	t	typeref:struct:__cusInfo
 cusList	src/cusInfoAccess.c	/^static cusInfo * cusList[MAX_CUSTOMER]; \/\/구조체 포인터 배열임을 유의한다.$/;"	v	file:
 debug	src/dbg.h	/^#define debug(/;"	d
 dvdInfo	src/dvdInfo.h	/^}dvdInfo;$/;"	t	typeref:struct:__dvdInfo
 dvdList	src/dvdInfoAccess.c	/^static dvdInfo * dvdList[MAX_DVD]; \/\/구조체 포인터 배열임을 유의한다.$/;"	v	file:
-dvdRentInfo	src/dvdInfo.h	/^}dvdRentInfo;$/;"	t	typeref:struct:__dvdRentInfo
+dvdRentInfo	src/rentInfo.h	/^} dvdRentInfo;$/;"	t	typeref:struct:__dvdRentInfo
 genre	src/dvdInfo.h	/^    int genre;$/;"	m	struct:__dvdInfo
 log_err	src/dbg.h	/^#define log_err(/;"	d
 log_info	src/dbg.h	/^#define log_info(/;"	d
@@ -81,16 +90,17 @@ main	src/main.c	/^int main(void)$/;"	f
 name	src/cusInfo.h	/^    char name[NAME_LEN];$/;"	m	struct:__cusInfo
 numOfCustomer	src/cusInfoAccess.c	/^static int numOfCustomer=0;$/;"	v	file:
 numOfDvd	src/dvdInfoAccess.c	/^static int numOfDvd=0;$/;"	v	file:
-numOfRentCus	src/dvdInfo.h	/^    int numOfRentCus; \/\/등록된 대여 정보의 개수$/;"	m	struct:__dvdInfo
+numOfRentCus	src/rentInfoAccess.c	/^static int numOfRentCus=0;$/;"	v	file:
 phoneNum	src/cusInfo.h	/^    char phoneNum[PHONE_LEN];$/;"	m	struct:__cusInfo
-rentDay	src/dvdInfo.h	/^    unsigned int rentDay; \/\/대여일$/;"	m	struct:__dvdRentInfo
+rentDay	src/rentInfo.h	/^    unsigned int rentDay;  \/\/ 대여일$/;"	m	struct:__dvdRentInfo
 rentDvd	src/dvdManager.c	/^int rentDvd(void)$/;"	f
-rentList	src/dvdInfo.h	/^    dvdRentInfo rentList[RENT_LEN]; \/\/ 대여 정보가 저장되는 배열$/;"	m	struct:__dvdInfo
+rentList	src/rentInfoAccess.c	/^static dvdRentInfo rentList[RENT_LEN]; \/\/ 구조체 배열 선언!!$/;"	v	file:
 rentState	src/dvdInfo.h	/^    int rentState; \/\/대여 상태 정보$/;"	m	struct:__dvdInfo
 returnDvd	src/dvdManager.c	/^int returnDvd(void)$/;"	f
 sentinel	src/dbg.h	/^#define sentinel(/;"	d
 setDvdRented	src/dvdInfoAccess.c	/^int setDvdRented(char * isbn)$/;"	f
-setDvdRentedInfo	src/dvdInfoAccess.c	/^int setDvdRentedInfo(char * isbn, char * id, unsigned char rntDay)$/;"	f
-showAllRntHis	src/dvdManager.c	/^int showAllRntHis(void)$/;"	f
+setDvdRentedState	src/dvdInfoAccess.c	/^int setDvdRentedState(char * isbn)$/;"	f
+showAllRntCusHis	src/dvdManager.c	/^int showAllRntCusHis(void)$/;"	f
+showAllRntDvdHis	src/dvdManager.c	/^int showAllRntDvdHis(void)$/;"	f
 showGenre	src/screenOut.c	/^void showGenre(int gen)$/;"	f
 title	src/dvdInfo.h	/^    char title[TITLE_LEN];$/;"	m	struct:__dvdInfo

@@ -13,7 +13,8 @@ int RegistDvd(void);
 
 int rentDvd(void);
 int returnDvd(void);
-int showAllRntHis(void);
+int showAllRntDvdHis(void);
+int showAllRntCusHis(void);
 
 #endif
 
