@@ -5,11 +5,9 @@
  * Last modified 2020/01/27
  */
 
+// 함수 내에서 함수 정의된 순서에 상관없이 함수들을 호출하고 싶으면 해당 해더파일도 추가해야한다.
 #include "common.h"
-#include "cusInfo.h"
-#include "dvdInfo.h"
-#include "rentInfo.h"
-#include "screenOut.h" // 함수 내에서 함수 정의된 순서에 상관없이 함수들을 호출하고 싶으면 해당 해더파일도 추가해야한다.
+#include "blManager.h"
 
 /* 프로그램 사용을 위한 메뉴 */
 void ShowMenu(void)

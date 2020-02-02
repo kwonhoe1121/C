@@ -14,8 +14,13 @@ int IsRegistISBN(char * ISBN);
 dvdInfo * GetDvdPtrByISBN(char * ISBN);
 int AddDvdInfo (char * ISBN, char * title, int genre);
 
-int setDvdRentedState(char * isbn);
 int setDvdRented(char * isbn);
+int setDvdReturned(char * isbn);
+
+int StoreDvdInfo(void);
+int LoadDvdInfo(void);
+
+void freeDvdListMem(void);
 
 #endif
 

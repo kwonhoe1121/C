@@ -10,6 +10,7 @@
 #include "cusInfo.h"
 #include "cusInfoAccess.h"
 #include "screenOut.h"
+#include "rentInfoAccess.h"
 
 #define RENT_LEN  100
 
@@ -28,6 +29,8 @@ void AddRentList(char * ISBN, char * cusID, int rentDay)
     memcpy(rentList[numOfRentCus].cusID, cusID, ID_LEN);
     rentList[numOfRentCus].rentDay = rentDay;
     numOfRentCus++;
+
+    StoreRentInfo();
 
 }
 
@@ -74,6 +77,71 @@ void PrintOutCusAllRentInfo   //RentInfo, 대여 정보 출력
             ShowRentDayInfo(&rentList[i]); //구조체 배열로 선언 했으므로 주소값 넘긴다.
         }
     }
+}
+
+/* 함    수: int StoreRentInfo(void)
+ * 기    능: Rent 정보 저장. numOfRentCus, rentList[RENT_LEN]
+ * 반    환: rc
+ *
+ */
+int StoreRentInfo(void)
+{
+    int rc;
+    int i;
+    FILE * fp;
+
+    fp = fopen("file/rent-info", "wb");
+    check(fp != NULL, "rent-info file open failed!!");
+
+    fwrite(&numOfRentCus, sizeof(int), 1, fp);
+    for(i = 0; i < numOfRentCus; i+=1)
+    {
+        fwrite(&rentList[i], sizeof(dvdRentInfo), 1, fp);
+    }
+    fclose(fp);
+    fp = NULL;
+
+    return RC_NRM;
+
+error:
+    if(fp) {
+        fclose(fp);
+        fp = NULL;
+    }
+    return RC_ERR;
+}
+
+/* 함    수: int LoadRentInfo(void)
+ * 기    능: Rent 정보 불러오기. numOfRentCus, rentList[RENT_LEN]
+ * 반    환: rc
+ *
+ */
+int LoadRentInfo(void)
+{
+    int rc;
+    int i;
+    FILE * fp;
+
+    fp = fopen("file/rent-info", "rb");
+    check(fp != NULL, "rent-info file open failed!!");
+
+    fread(&numOfRentCus, sizeof(int), 1, fp);
+//    for(i = 0; i < numOfRentCus; i+=1)
+//    {
+//        fread(&rentList[i], sizeof(dvdRentInfo), 1, fp);
+//    }
+    fread(rentList, sizeof(dvdInfo), numOfRentCus, fp); //구조체 배열인 경우는 메모리가 미리 할당 되어 있기 때문에 데이터 복원을 한번에 할 수 있다. 훨씬 빠르다.
+    fclose(fp);
+    fp = NULL;
+
+    return RC_NRM;
+
+error:
+    if(fp) {
+        fclose(fp);
+        fp = NULL;
+    }
+    return RC_ERR;
 }
 
 /* end of file */

@@ -34,6 +34,7 @@ int AddDvdInfo (char * ISBN, char * title, int genre)
 
     dvdList[numOfDvd]->rentState = RETURNED; 
     //dvdList[numOfDvd]->numOfRentCus = 0;
+    StoreDvdInfo();
 
     return ++numOfDvd;
 
@@ -45,40 +46,8 @@ error:
     return RC_ERR;
 }
 
-/* 함    수: int setDvdRentedInfo(char * isbn)
- * 기    능: 대여된 dvd 대여 상태 설정 함수
- * 반    환: int
- *
- */
-int setDvdRentedState(char * isbn)
-{
-    dvdInfo * slctDvd;
-    int rc;
-
-    slctDvd = GetDvdPtrByISBN(isbn);
-    if(!slctDvd) return RC_ERR;
-
-//   if(slctDvd->numOfRentCus >= RENT_LEN) {
-//        fputs("등록된 대여 정보의 개수를 초과하여 대여 정보를 기록할 수 없습니다.\n", stdout);
-//        return RC_ERR;
-//    }
-//    debug("id is %s", id);
-//    debug("rntDay is %d", rntDay);
-//    slctDvd->rentState = RENTED;
-//    //slctDvd->rentList[slctDvd->numOfRentCus] = *rentDvdInfo;
-//    memcpy(slctDvd->rentList[slctDvd->numOfRentCus].cusID, id, ID_LEN);
-//    slctDvd->rentList[slctDvd->numOfRentCus].rentDay = rntDay;
-//    slctDvd->numOfRentCus++;
-    slctDvd->rentState = RENTED;
-
-    return RC_NRM;
-
-error:
-    return RC_ERR;
-}
-
 /* 함    수: int setDvdRented(char * isbn)
- * 기    능: 대여된 dvd 반납시키는 함수.
+ * 기    능: 대여된 dvd 대여시키는 함수.
  * 반    환: int
  *
  */
@@ -90,7 +59,31 @@ int setDvdRented(char * isbn)
     slctDvd = GetDvdPtrByISBN(isbn);
     if(!slctDvd) return RC_ERR;
 
+    slctDvd->rentState = RENTED;
+
+    StoreDvdInfo();
+
+    return RC_NRM;
+error:
+    return RC_ERR;
+}
+
+/* 함    수: int setDvdReturned(char * isbn)
+ * 기    능: 대여된 dvd 반납시키는 함수.
+ * 반    환: int
+ *
+ */
+int setDvdReturned(char * isbn)
+{
+    dvdInfo * slctDvd;
+    int rc;
+
+    slctDvd = GetDvdPtrByISBN(isbn);
+    if(!slctDvd) return RC_ERR;
+
     slctDvd->rentState = RETURNED;
+
+    StoreDvdInfo();
 
     return RC_NRM;
 error:
@@ -135,6 +128,98 @@ int IsRegistISBN(char * ISBN)
         return RC_NRM;
 
     return RC_NFD;
+}
+
+
+/* 함    수: int StoreDvdInfo(void)
+ * 기    능: DVD 정보 저장. numOfDvd, dvdList[MAX_DVD]
+ * 반    환: rc
+ *
+ */
+int StoreDvdInfo(void)
+{
+    int rc;
+    int i;
+    FILE * fp;
+
+    fp = fopen("file/dvd-info", "wb");
+    check(fp != NULL, "dvd-info file open failed!!");
+
+    fwrite(&numOfDvd, sizeof(int), 1, fp);
+    for(i = 0; i < numOfDvd; i+=1)
+    {
+        fwrite(dvdList[i], sizeof(dvdInfo), 1, fp);
+    }
+    fclose(fp);
+    fp = NULL;
+
+    return RC_NRM;
+
+error:
+    if(fp) {
+        fclose(fp);
+        fp = NULL;
+    }
+    return RC_ERR;
+}
+
+/* 함    수: int LoadDvdInfo(void)
+ * 기    능: DVD 정보 불러오기. numOfDvd, dvdList[MAX_DVD]
+ * 반    환: rc
+ *
+ */
+int LoadDvdInfo(void)
+{
+    int rc;
+    int i;
+    FILE * fp;
+
+    fp = fopen("file/dvd-info", "rb");
+    check(fp != NULL, "dvd-info file open failed!!");
+
+    fread(&numOfDvd, sizeof(int), 1, fp);
+
+    for(i = 0; i < numOfDvd; i+=1)
+    {
+        dvdList[i] = (dvdInfo*)malloc(sizeof(dvdInfo));
+        check(dvdList[i] != NULL, "failed memmory allocate at LoadDvdInfo");
+        fread(dvdList[i], sizeof(dvdInfo), 1, fp);
+    }
+
+    fclose(fp);
+    fp = NULL;
+
+    return RC_NRM;
+
+error:
+    if(fp) {
+        fclose(fp);
+        fp = NULL;
+    }
+    if(dvdList[i]) {
+        free(dvdList[i]);
+        dvdList[i] = NULL;
+    }
+    return RC_ERR;
+}
+
+/* 함    수: void freeDvdListMem(void)
+ * 기    능: dvdList 적재된 메모리 해제 시키는 함수
+ * 반    환: 
+ *
+ */
+void freeDvdListMem(void)
+{
+    int i;
+    int rc;
+
+    for(i = 0; i < numOfDvd; i+=1)
+    {
+        if(dvdList[i]) {
+            free(dvdList[i]);
+            dvdList[i] = NULL;
+        }
+    }
 }
 
 /* end of file */

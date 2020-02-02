@@ -14,6 +14,11 @@ int AddCusInfo(char * ID, char * name, char * num);
 cusInfo * GetCusPtrByID(char * ID);
 int IsRegistID(char * ID);
 
+int StoreCusInfo(void);
+int LoadCusInfo(void);
+
+void freeCusListMem(void);
+
 #endif
 
 /* end of file */

@@ -8,8 +8,6 @@
 #ifndef __DVDINFO_H__
 #define __DVDINFO_H__
 
-#include "cusInfo.h"
-
 #define ISBN_LEN    30
 #define TITLE_LEN   30
 #define RENT_LEN   100
